@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Management - Krishna Medical Store</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v=3">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f5f7fa;
+            color: var(--text-dark);
+        }
+
+        .cust-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .page-title {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 0.2rem;
+        }
+
+        .page-subtitle {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .content-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid #eee;
+            overflow: hidden;
+        }
+
+        .toolbar {
+            padding: 1.5rem;
+            border-bottom: 1px solid #f0f0f0;
+            background: #fff;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #aaa;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.8rem 1rem 0.8rem 2.5rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .search-input:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px var(--primary-light);
+            outline: none;
+        }
+
+        .cust-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .cust-table th {
+            text-align: left;
+            padding: 1rem 1.5rem;
+            background: #fcfcfc;
+            color: var(--text-light);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cust-table td {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #f5f5f5;
+            color: var(--text-dark);
+            vertical-align: middle;
+        }
+
+        .cust-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .cust-table tr:hover {
+            background-color: #f8fcfb;
+        }
+
+        .cust-name {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .cust-meta {
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+        .badge-spend {
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .actions-cell {
+            display: flex;
+            gap: 8px;
+        }
+
+        .btn-action {
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            border: 1px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .btn-view {
+            background: #e3f2fd;
+            color: #1565c0;
+            border-color: #bbdefb;
+        }
+
+        .btn-view:hover {
+            background: #bbdefb;
+        }
+
+        .btn-edit {
+            background: #fff3e0;
+            color: #ef6c00;
+            border-color: #ffe0b2;
+        }
+
+        .btn-edit:hover {
+            background: #ffe0b2;
+        }
+
+        .nav-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-back:hover {
+            color: var(--primary-color);
+        }
+
+        /* Modal Base Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(2px);
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        /* Modal Overrides */
+        .modal-box {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            color: #555;
+            font-weight: 500;
+        }
+
+        input[type="text"],
+        input[type="tel"] {
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 0.7rem;
+            font-size: 1rem;
+            transition: border-color 0.2s;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        input:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+
+        /* Search Fix */
+        .search-input {
+            padding-left: 2.8rem !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cust-container">
+        <a href="/" class="nav-back">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7" />
+            </svg>
+            Back to Billing
+        </a>
+
+        <div class="header-section">
+            <div>
+                <h1 class="page-title">Customer Management</h1>
+                <p class="page-subtitle">Track customer profiles, visits, and purchase history</p>
+            </div>
+            <button class="btn-primary" onclick="openProfileModal()" style="display:flex; align-items:center; gap:8px;">
+                <span>+</span> New Customer
+            </button>
+        </div>
+
+        <div class="content-card">
+            <div class="toolbar">
+                <div class="search-wrapper">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="custSearch" class="search-input" placeholder="Search by name or mobile..."
+                        oninput="filterCustomers(this.value)">
+                </div>
+                <div style="flex:1;"></div>
+                <div style="color:#888; font-size:0.9rem;">
+                    Total Customers: <span id="totalCount" style="font-weight:600; color:var(--text-dark)">0</span>
+                </div>
+            </div>
+
+            <table class="cust-table">
+                <thead>
+                    <tr>
+                        <th width="30%">Name / Details</th>
+                        <th width="15%">Mobile</th>
+                        <th width="20%">Location</th>
+                        <th width="10%">Visits</th>
+                        <th width="15%">Total Spent</th>
+                        <th width="10%">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="custBody">
+                    <tr>
+                        <td colspan="6" style="text-align:center; padding:3rem; color:#999;">Loading...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- History Modal -->
+    <div id="histModal" class="modal-overlay hidden">
+        <div class="modal-box" style="width:650px;">
+            <div
+                style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem; border-bottom:1px solid #eee; padding-bottom:1rem;">
+                <div>
+                    <h2 id="histTitle" style="margin:0; font-size:1.4rem;">History</h2>
+                    <p style="margin:0; font-size:0.9rem; color:#888;">Recent transactions</p>
+                </div>
+                <button onclick="closeHistModal()"
+                    style="background:none; border:none; font-size:1.5rem; cursor:pointer; color:#999;">&times;</button>
+            </div>
+
+            <div style="max-height:400px; overflow-y:auto;">
+                <table class="cust-table" style="font-size:0.95rem;">
+                    <thead style="position:sticky; top:0;">
+                        <tr>
+                            <th>Date & Time</th>
+                            <th>Invoice ID</th>
+                            <th style="text-align:right;">Amount</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="histBody"></tbody>
+                </table>
+            </div>
+
+            <div
+                style="margin-top:1.5rem; padding-top:1rem; border-top:1px solid #eee; display:flex; justify-content:space-between; align-items:center;">
+                <button class="btn-secondary" onclick="printHistory()">Print Statement</button>
+                <div style="font-size:1.1rem;">Total: <strong id="histTotalDisplay">₹0.00</strong></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Profile Modal -->
+    <div id="profileModal" class="modal-overlay hidden">
+        <div class="modal-box" style="width:450px;">
+            <h2 id="profileTitle" style="margin-bottom:1.5rem; border-bottom:1px solid #eee; padding-bottom:1rem;">Edit
+                Profile</h2>
+            <form id="profileForm" onsubmit="saveProfile(event)">
+                <input type="hidden" id="custId">
+                <input type="hidden" id="oldName">
+
+                <div class="form-group" style="display:flex; gap:1rem;">
+                    <div style="flex:1;">
+                        <label>First Name</label>
+                        <input type="text" id="firstName" required placeholder="John">
+                    </div>
+                    <div style="flex:1;">
+                        <label>Last Name</label>
+                        <input type="text" id="lastName" placeholder="Doe">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Mobile Number</label>
+                    <input type="tel" id="mobile" pattern="[0-9]{10}" placeholder="e.g. 9876543210">
+                </div>
+                <div class="form-group">
+                    <label>Address / Location</label>
+                    <input type="text" id="address" placeholder="e.g. Sector 4, Main Road">
+                </div>
+
+                <div style="display:flex; gap:1rem; margin-top:2rem;">
+                    <button type="submit" class="btn-primary" style="flex:1;">Save Customer</button>
+                    <button type="button" class="btn-secondary" onclick="closeProfileModal()"
+                        style="flex:1; background:#f5f5f5; color:#666;">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let customers = [];
+
+        document.addEventListener('DOMContentLoaded', loadCustomers);
+
+        async function loadCustomers() {
+            const res = await fetch('/api/customers');
+            customers = await res.json();
+            document.getElementById('totalCount').innerText = customers.length;
+            renderTable(customers);
+        }
+
+        function renderTable(list) {
+            const tbody = document.getElementById('custBody');
+            if (list.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="6" style="text-align:center; padding:3rem; color:#999;">No customers found matching your search.</td></tr>';
+                return;
+            }
+            tbody.innerHTML = list.map(c => `
+                <tr class="row-clickable">
+                    <td>
+                        <div class="cust-name">${c.name}</div>
+                        <div class="cust-meta">ID: #${c.id.substring(0, 6)}</div>
+                    </td>
+                    <td>${c.mobile || '<span style="color:#ccc;">-</span>'}</td>
+                    <td>${c.address || '<span style="color:#ccc;">-</span>'}</td>
+                    <td><span style="background:#f0f0f0; padding:2px 6px; border-radius:4px; font-size:0.85rem;">${c.visits} visits</span></td>
+                    <td><span class="badge-spend">₹${c.total_spent.toFixed(2)}</span></td>
+                    <td class="actions-cell">
+                        <button class="btn-action btn-view" title="View History" onclick="viewHistory('${c.name}')">History</button>
+                        <button class="btn-action btn-edit" title="Edit Profile" onclick="editProfile('${c.id || ''}', '${c.name}', '${c.mobile}', '${c.address}')">Edit</button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function filterCustomers(query) {
+            const lower = query.toLowerCase();
+            const filtered = customers.filter(c =>
+                c.name.toLowerCase().includes(lower) ||
+                (c.mobile && c.mobile.includes(query))
+            );
+            renderTable(filtered);
+        }
+
+        // History Logic (Same as before, just UI tweaked)
+        window.historyData = [];
+        window.currentHistoryName = '';
+
+        window.viewHistory = async function (name) {
+            window.currentHistoryName = name;
+            const res = await fetch(`/api/customer_history?name=${encodeURIComponent(name)}`);
+            const history = await res.json();
+            window.historyData = history;
+
+            document.getElementById('histTitle').textContent = `History: ${name}`;
+            const tbody = document.getElementById('histBody');
+
+            let total = 0;
+            if (history.length) {
+                const rows = history.map(h => {
+                    total += parseFloat(h.amount);
+                    return `
+                    <tr>
+                        <td>
+                            <div style="font-weight:500;">${h.date}</div>
+                            <div style="font-size:0.8rem; color:#888;">${h.time}</div>
+                        </td>
+                        <td style="font-family:monospace;">${h.invoice}</td>
+                        <td style="text-align:right; font-weight:600;">₹${h.amount}</td>
+                        <td style="text-align:right;"><a href="/print_invoice/${h.invoice}" target="_blank" style="color:var(--primary-color); text-decoration:none;">View ↗</a></td>
+                    </tr>`;
+                }).join('');
+                tbody.innerHTML = rows;
+                document.getElementById('histTotalDisplay').innerText = '₹' + total.toFixed(2);
+            } else {
+                tbody.innerHTML = '<tr><td colspan="4" style="text-align:center; padding:2rem;">No purchase history found.</td></tr>';
+                document.getElementById('histTotalDisplay').innerText = '₹0.00';
+            }
+
+            document.getElementById('histModal').classList.remove('hidden');
+        }
+
+        window.closeHistModal = function () {
+            document.getElementById('histModal').classList.add('hidden');
+        }
+
+        window.printHistory = function () {
+            if (!window.historyData.length) return;
+            const printWindow = window.open('', '_blank');
+            let total = 0;
+            const rows = window.historyData.map(h => {
+                total += parseFloat(h.amount);
+                return `<tr>
+                    <td>${h.date} <small>${h.time}</small></td>
+                    <td>${h.invoice}</td>
+                    <td>₹${h.amount}</td>
+                </tr>`;
+            }).join('');
+
+            const html = `
+                <html>
+                <head>
+                    <title>Statement - ${window.currentHistoryName}</title>
+                    <style>
+                        body { font-family: sans-serif; padding: 40px; }
+                        h2 { margin-bottom: 5px; }
+                        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+                        th, td { border-bottom: 1px solid #ddd; padding: 12px 8px; text-align: left; }
+                        th { background-color: #f9f9f9; }
+                        .total { font-weight: bold; font-size: 1.2em; margin-top: 20px; text-align: right; }
+                        .meta { color: #666; font-size: 0.9em; margin-bottom: 20px; }
+                    </style>
+                </head>
+                <body>
+                    <h2>Customer Statement</h2>
+                    <div class="meta">Customer: <strong>${window.currentHistoryName}</strong></div>
+                    <div class="meta">Date Generated: ${new Date().toLocaleString()}</div>
+                    <table>
+                        <thead>
+                            <tr><th>Date</th><th>Invoice Ref</th><th>Amount</th></tr>
+                        </thead>
+                        <tbody>${rows}</tbody>
+                    </table>
+                    <div class="total">Total Purchase: ₹${total.toFixed(2)}</div>
+                    <script>window.print();<\/script>
+                </body>
+                </html>
+            `;
+            printWindow.document.write(html);
+            printWindow.document.close();
+        }
+
+        // Profile Logic
+        window.openProfileModal = function () {
+            document.getElementById('profileTitle').innerText = 'New Customer';
+            document.getElementById('profileForm').reset();
+            document.getElementById('custId').value = '';
+            document.getElementById('profileModal').classList.remove('hidden');
+        }
+
+        window.editProfile = function (id, name, mobile, address) {
+            const parts = name.split(' ');
+            const first = parts[0];
+            const last = parts.slice(1).join(' ');
+
+            document.getElementById('profileTitle').innerText = 'Edit Customer';
+            document.getElementById('custId').value = id;
+            document.getElementById('oldName').value = name;
+            document.getElementById('firstName').value = first;
+            document.getElementById('lastName').value = last;
+            document.getElementById('mobile').value = (mobile === 'undefined' || mobile === 'null') ? '' : mobile;
+            document.getElementById('address').value = (address === 'undefined' || address === 'null') ? '' : address;
+
+            document.getElementById('profileModal').classList.remove('hidden');
+        }
+
+        window.closeProfileModal = function () {
+            document.getElementById('profileModal').classList.add('hidden');
+        }
+
+        window.saveProfile = async function (e) {
+            e.preventDefault();
+            const data = {
+                id: document.getElementById('custId').value,
+                old_name: document.getElementById('oldName').value,
+                first_name: document.getElementById('firstName').value,
+                last_name: document.getElementById('lastName').value,
+                mobile: document.getElementById('mobile').value,
+                address: document.getElementById('address').value
+            };
+
+            try {
+                const res = await fetch('/api/customer_profile', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                const resData = await res.json();
+                if (resData.success) {
+                    closeProfileModal();
+                    loadCustomers();
+                } else {
+                    alert('Error: ' + resData.message);
+                }
+            } catch (err) {
+                alert('System Error: ' + err);
+            }
+        }
+    </script>
+</body>
+
+</html>

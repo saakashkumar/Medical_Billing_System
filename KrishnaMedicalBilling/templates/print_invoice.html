@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Invoice Print</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            padding: 20px;
+        }
+
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .no-print {
+            margin-bottom: 20px;
+        }
+
+        @media print {
+            .no-print {
+                display: none;
+            }
+        }
+
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+            background: #333;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="no-print">
+        <button onclick="window.print()">Print Invoice</button>
+        <button onclick="window.close()" style="background:#ccc; color:black; margin-left:10px;">Close</button>
+    </div>
+    <pre>{{ content }}</pre>
+    <script>
+        // Auto print dialog
+        window.onload = function () {
+            setTimeout(() => window.print(), 500);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+id,name,price,stock,unit,type,category,batch,expiry,gst_rate
+1,Paracetamol 350mg,10,100,Strip,Tablet,Medicine,BATCH001,2026-12-11,12
+2,Cough Syrup,85.5,27,Bottle,Syrup,Medicine,BATCH001,2026-12-11,12
+3,Vitamin C Tablets,40.0,184,Strip,Tablet,Supplement,BATCH001,2026-12-11,12
+4,Cotton Roll,15.0,23,Pack,Item,Surgical,BATCH001,2026-12-11,12
+5,Hand Sanitizer 100ml,50.0,38,Bottle,Liquid,Hygiene,BATCH001,2026-12-11,12
+6,Face Mask N95,95.0,500,Pc,Item,Hygiene,BATCH001,2026-12-11,12
+7,Bandage 5cm,10.0,150,Roll,Item,Surgical,BATCH001,2026-12-11,12
+8,Thermometer Digital,250.0,20,Pc,Device,Equipment,BATCH001,2026-12-11,12
+9,Paracetamol 500mg,20,100,Strip,Tablet,Medicine,BATCH001,2026-12-11,0

@@ -1,0 +1,18 @@
+==========================================
+         KRISHNA MEDICAL STORE
+==========================================
+Date: 2025-12-11 00:36:51
+Customer: Soumen Pasari
+------------------------------------------
+Item                 Qty   Price    Total   
+------------------------------------------
+Paracetamol 500mg    1     15.0     15.0    
+   Batch:BATCH001 Exp:2026-12-11 GST:12%
+Cough Syrup          1     70.0     70.0    
+   Batch:BATCH001 Exp:2026-12-11 GST:12%
+------------------------------------------
+Sub Total (Taxable):  75.89
+Total GST:            9.11
+GRAND TOTAL:          85.00
+==========================================
+   Thank you for your business!

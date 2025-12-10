@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krishna Medical Store</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v=2">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div>
+                <h1>Krishna Medical Store <span>Billing System v2.0</span></h1>
+                <div class="date-display" id="currentDate"></div>
+            </div>
+            <div style="display:flex; gap:10px;">
+                <a href="/inventory" class="btn-primary"
+                    style="text-decoration:none; width:auto; padding: 0.5rem 1rem; background-color:#2c3e50;">Inventory</a>
+                <a href="/customers" class="btn-primary"
+                    style="text-decoration:none; width:auto; padding: 0.5rem 1rem; background-color:#8e44ad;">Customers</a>
+                <a href="/dashboard" class="btn-primary"
+                    style="text-decoration:none; width:auto; padding: 0.5rem 1rem;">View Dashboard</a>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <!-- Left Panel: Product Selection -->
+            <section class="product-panel">
+                <div class="search-bar">
+                    <input type="text" id="productSearch" placeholder="Search medicines by name..." autofocus>
+                    <div id="searchResults" class="search-results"></div>
+                </div>
+
+                <div class="filter-controls" style="display:flex; gap:10px; padding:0 1.5rem 1rem;">
+                    <select id="sortBy" class="form-select" style="flex:1;">
+                        <option value="name_asc">Name: A to Z</option>
+                        <option value="name_desc">Name: Z to A</option>
+                        <option value="price_asc">Price: Low to High</option>
+                        <option value="price_desc">Price: High to Low</option>
+                        <option value="stock_asc">Stock: Low to High</option>
+                        <option value="stock_desc">Stock: High to Low</option>
+                    </select>
+                    <select id="filterCategory" class="form-select" style="flex:1;">
+                        <option value="">All Categories</option>
+                        <!-- Populated by JS -->
+                    </select>
+                    <button class="btn-secondary" onclick="toggleView()" style="margin-top:0; padding:0.5rem 1rem;">
+                        List/Grid
+                    </button>
+                </div>
+
+
+                <div class="product-list" id="productList">
+            </section>
+
+            <!-- Right Panel: Cart -->
+            <section class="cart-panel">
+                <div class="cart-header">
+                    <h2>Current Order</h2>
+                    <div class="customer-info" style="display:flex; gap:10px;">
+                        <div style="flex:2;">
+                            <input type="text" id="customerName" list="customerList" placeholder="Customer Name"
+                                autocomplete="off" style="width:100%">
+                            <datalist id="customerList"></datalist>
+                        </div>
+                        <div style="flex:1;">
+                            <input type="tel" id="customerMobile" placeholder="Mobile No." autocomplete="off"
+                                style="width:100%" maxlength="10">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cart-items" id="cartItems">
+                    <!-- Cart items will go here -->
+                    <div class="empty-cart-msg">Cart is empty</div>
+                </div>
+
+                <div class="cart-footer">
+                    <div class="row total-row">
+                        <span>Grand Total:</span>
+                        <span id="totalAmount">₹0.00</span>
+                    </div>
+                    <button id="btnGenerate" class="btn-primary" onclick="generateInvoice()">Generate Invoice</button>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="modalOverlay" class="modal" style="display:none;">
+        <div class="modal-content">
+            <div class="success-icon">✓</div>
+            <h3>Invoice Generated!</h3>
+            <div style="display:flex; gap:1rem; margin-top:1.5rem; justify-content:center;">
+                <button id="printBtn" class="btn-primary">Print Bill</button>
+                <button class="btn-secondary" style="margin:0" onclick="newInvoice()">New Order</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="modalOverlay" class="modal-overlay" style="display:none;">
+        <div class="modal-box">
+            <div style="text-align:center; color:#27ae60; font-size:3rem; margin-bottom:1rem;">✔</div>
+            <h2>Invoice Generated!</h2>
+            <p>The invoice has been successfully saved.</p>
+            <div style="margin-top:2rem; display:flex; gap:10px; justify-content:center;">
+                <button id="printBtn" class="btn-primary">Print Invoice</button>
+                <button class="btn-secondary" onclick="document.getElementById('modalOverlay').style.display='none'">New
+                    Order</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}?v=4"></script>
+</body>
+
+</html>

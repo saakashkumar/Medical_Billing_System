@@ -1,0 +1,9 @@
+id,name,price,stock,unit,type,category
+1,Paracetamol 500mg,20.0,86,Strip,Tablet,Medicine
+2,Cough Syrup,85.5,37,Bottle,Syrup,Medicine
+3,Vitamin C Tablets,40.0,189,Strip,Tablet,Supplement
+4,Cotton Roll,15.0,27,Pack,Item,Surgical
+5,Hand Sanitizer 100ml,50.0,40,Bottle,Liquid,Hygiene
+6,Face Mask N95,95.0,500,Pc,Item,Hygiene
+7,Bandage 5cm,10.0,150,Roll,Item,Surgical
+8,Thermometer Digital,250.0,20,Pc,Device,Equipment

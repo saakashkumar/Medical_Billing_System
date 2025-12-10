@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Inventory Manager</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        .inv-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .inv-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            gap: 2rem;
+        }
+
+        .search-box input {
+            padding: 0.7rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            width: 300px;
+            font-size: 1rem;
+        }
+
+        .inv-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .inv-table th,
+        .inv-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .inv-table th {
+            background: #f8f9fa;
+            font-weight: 600;
+        }
+
+        .actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .btn-edit {
+            background: #3498db;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn-del {
+            background: #e74c3c;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* Modal for Add/Edit */
+        .form-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .form-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            width: 400px;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 0.6rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .btn-group .btn-primary,
+        .btn-group .btn-secondary {
+            width: 100%;
+            margin: 0;
+        }
+
+        .btn-secondary {
+            background: #95a5a6;
+            color: white;
+            border: none;
+            padding: 0.8rem;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .form-select {
+            padding: 0.7rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+            background: white;
+        }
+
+        /* Scrollable Table Wrapper */
+        .table-wrapper {
+            max-height: calc(100vh - 200px);
+            overflow-y: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            background: white;
+            border: 1px solid #eee;
+        }
+
+        .inv-table {
+            width: 100%;
+            border-collapse: separate;
+            /* Required for sticky to play nice with borders sometimes */
+            border-spacing: 0;
+        }
+
+        .inv-table th {
+            position: sticky;
+            top: 0;
+            background: #f8f9fa;
+            z-index: 10;
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 2px solid #ddd;
+            font-weight: 600;
+        }
+
+        .inv-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="inv-container"><a href="/" class="nav-back">← Back to Billing</a>
+        <div class="inv-header">
+            <div>
+                <h1>Inventory Manager</h1>
+                <p style="color:#666; margin-top:0.5rem;">Manage stock and prices</p>
+            </div>
+
+            <div class="search-box">
+                <input type="text" id="invSearch" placeholder="Search by Name or Batch..." onkeyup="filterInventory()">
+            </div>
+
+            <div style="display:flex; gap:10px;">
+                <select id="invSort" class="form-select" onchange="filterInventory()">
+                    <option value="name_asc">Name: A to Z</option>
+                    <option value="name_desc">Name: Z to A</option>
+                    <option value="price_asc">Price: Low to High</option>
+                    <option value="price_desc">Price: High to Low</option>
+                    <option value="stock_asc">Stock: Low to High</option>
+                    <option value="stock_desc">Stock: High to Low</option>
+                </select>
+                <select id="invCategory" class="form-select" onchange="filterInventory()">
+                    <option value="">All Categories</option>
+                </select>
+            </div>
+
+            <button class="btn-primary" style="width:auto;" onclick="openModal()">+ Add New Medicine</button>
+        </div>
+        <div class="table-wrapper">
+            <table class="inv-table">
+                <thead>
+                    <tr>
+                        <th width="50">ID</th>
+                        <th>Name / Details</th>
+                        <th>Price</th>
+                        <th>Stock</th>
+                        <th>Batch / Expiry</th>
+                        <!-- <th>GST</th> -->
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <!-- JS will pop -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- Add/Edit Modal -->
+    <div id="modal" class="form-modal hidden">
+        <div class="form-content">
+            <h2 id="modalTitle">New Product</h2>
+            <form id="productForm"><input type="hidden" id="prodId">
+                <div class="form-group"><label>Name</label><input type="text" id="name" required></div>
+                <div class="form-group grid-2">
+                    <div><label>Category</label><select id="category">
+                            <option value="Medicine">Medicine</option>
+                            <option value="Surgical">Surgical</option>
+                            <option value="Hygiene">Hygiene</option>
+                            <option value="Supplement">Supplement</option>
+                            <option value="Equipment">Equipment</option>
+                            <option value="Other">Other</option>
+                        </select></div>
+                    <div><label>Type</label><select id="type">
+                            <option value="Tablet">Tablet</option>
+                            <option value="Syrup">Syrup</option>
+                            <option value="Injection">Injection</option>
+                            <option value="Cream">Cream</option>
+                            <option value="Powder">Powder</option>
+                            <option value="Item">Item</option>
+                        </select></div>
+                </div>
+                <div class="form-group grid-2">
+                    <div><label>Price (₹)</label><input type="number" id="price" step="0.01" required></div>
+                    <div style="display:none;"><label>GST Rate (%)</label><select id="gst_rate">
+                            <option value="0">0%</option>
+                            <option value="5">5%</option>
+                            <option value="12">12%</option>
+                            <option value="18">18%</option>
+                            <option value="28">28%</option>
+                        </select></div>
+                </div>
+                <div class="form-group grid-2">
+                    <div><label>Stock</label><input type="number" id="stock" step="any" required></div>
+                    <div><label>Unit</label><select id="unit">
+                            <option value="Strip">Strip</option>
+                            <option value="Bottle">Bottle</option>
+                            <option value="Tube">Tube</option>
+                            <option value="Pack">Pack</option>
+                            <option value="Pc">Pc</option>
+                            <option value="Roll">Roll</option>
+                        </select></div>
+                </div>
+                <!-- New Row for Pack Size -->
+                <div class="form-group grid-2">
+                    <div><label>Qty per Unit (e.g. 10 tabs)</label><input type="text" id="per_strip" placeholder="10">
+                    </div>
+                    <div></div> <!-- Spacer -->
+                </div>
+                <div class="form-group grid-2">
+                    <div><label>Batch No.</label><input type="text" id="batch" placeholder="BATCH001"></div>
+                    <div><label>Expiry Date</label><input type="date" id="expiry"></div>
+                </div>
+                <div class="btn-group"><button type="submit" class="btn-primary">Save Product</button><button
+                        type="button" class="btn-secondary" onclick="closeModal()">Cancel</button></div>
+            </form>
+        </div>
+    </div>
+    <script>let products = [];
+
+        document.addEventListener('DOMContentLoaded', loadProducts);
+
+        async function loadProducts() {
+            const res = await fetch('/api/products');
+            products = await res.json();
+
+            // Populate Categories
+            const categories = [...new Set(products.map(p => p.category).filter(Boolean))].sort();
+            const catSelect = document.getElementById('invCategory');
+            categories.forEach(c => {
+                const opt = document.createElement('option');
+                opt.value = c;
+                opt.textContent = c;
+                catSelect.appendChild(opt);
+            });
+
+            renderTable(products);
+        }
+
+        function filterInventory() {
+            const query = document.getElementById('invSearch').value.toLowerCase();
+            const sortVal = document.getElementById('invSort').value;
+            const catVal = document.getElementById('invCategory').value;
+
+            let filtered = products.filter(p => {
+                const matchesSearch = p.name.toLowerCase().includes(query) ||
+                    (p.batch && p.batch.toLowerCase().includes(query));
+                const matchesCat = catVal ? p.category === catVal : true;
+                return matchesSearch && matchesCat;
+            });
+
+            // Sorting
+            filtered.sort((a, b) => {
+                if (sortVal === 'name_asc' || sortVal === 'name') return a.name.localeCompare(b.name);
+                if (sortVal === 'name_desc') return b.name.localeCompare(a.name);
+                if (sortVal === 'price_asc') return parseFloat(a.price) - parseFloat(b.price);
+                if (sortVal === 'price_desc') return parseFloat(b.price) - parseFloat(a.price);
+                if (sortVal === 'stock_asc') return parseFloat(a.stock) - parseFloat(b.stock);
+                if (sortVal === 'stock_desc') return parseFloat(b.stock) - parseFloat(a.stock);
+                return 0;
+            });
+
+            renderTable(filtered);
+        }
+
+        function renderTable(list) {
+            const tbody = document.getElementById('tableBody');
+
+            if (list.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="7">No products found.</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = list.map(p => `
+                    <tr>
+                    <td>${p.id}</td>
+                    <td>
+                        <strong>${p.name}</strong><br>
+                        <span style="font-size:0.8rem; color:#666;">
+                            ${p.category} | ${p.type} 
+                            ${p.per_strip ? ` | <b>(${p.per_strip} / ${p.unit})</b>` : ''}
+                        </span>
+                    </td>
+                    <td>₹${parseFloat(p.price).toFixed(2)}</td>
+                    <td>${p.stock} ${p.unit}</td>
+                    <td>
+                        <span style="font-size:0.85rem">
+                        Batch: ${p.batch || '-'}<br>
+                        Exp: ${p.expiry || '-'}
+                        </span>
+                    </td>
+                    <!-- <td>${p.gst_rate}%</td> -->
+                    <td>
+                        <button class="btn-sm btn-edit" onclick="editProduct('${p.id}')">Edit</button>
+                        <button class="btn-sm btn-delete" onclick="deleteProduct('${p.id}')">Delete</button>
+                    </td>
+                </tr>`).join('');
+        }
+
+        function openModal() {
+            document.getElementById('modal').classList.remove('hidden');
+            document.getElementById('modalTitle').innerText = 'New Product';
+            document.getElementById('productForm').reset();
+            document.getElementById('prodId').value = '';
+        }
+
+        function editProduct(id) {
+            const p = products.find(x => x.id === id);
+            if (!p) return;
+
+            document.getElementById('modal').classList.remove('hidden');
+            document.getElementById('modalTitle').innerText = 'Edit Product';
+
+            document.getElementById('prodId').value = p.id;
+            document.getElementById('name').value = p.name;
+            document.getElementById('price').value = p.price;
+            document.getElementById('stock').value = p.stock;
+            document.getElementById('unit').value = p.unit;
+            document.getElementById('type').value = p.type;
+            document.getElementById('category').value = p.category;
+
+            document.getElementById('batch').value = p.batch || '';
+            document.getElementById('expiry').value = p.expiry || '';
+            document.getElementById('gst_rate').value = p.gst_rate || '0';
+            document.getElementById('per_strip').value = p.per_strip || ''; // Loading new field
+        }
+
+        function closeModal() {
+            document.getElementById('modal').classList.add('hidden');
+        }
+
+        window.deleteProduct = async function (id) {
+            if (!confirm('Are you sure you want to delete this?')) return;
+
+            await fetch(`/api/product?id=${id}`, {
+                method: 'DELETE'
+            });
+            loadProducts();
+        }
+
+        document.getElementById('productForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const id = document.getElementById('prodId').value;
+            const name = document.getElementById('name').value;
+            const price = document.getElementById('price').value;
+            const stock = document.getElementById('stock').value;
+            const unit = document.getElementById('unit').value;
+            const type = document.getElementById('type').value;
+            const category = document.getElementById('category').value;
+            const batch = document.getElementById('batch').value;
+            const expiry = document.getElementById('expiry').value;
+            const gst_rate = document.getElementById('gst_rate').value;
+            const per_strip = document.getElementById('per_strip').value;
+
+            const data = { id, name, price, stock, unit, type, category, batch, expiry, gst_rate, per_strip };
+
+            const method = id ? 'PUT' : 'POST';
+
+            const res = await fetch('/api/product', {
+
+                method: method,
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+
+                ,
+                body: JSON.stringify(data)
+            });
+
+            const result = await res.json();
+
+            if (result.success) {
+                closeModal();
+                loadProducts();
+            }
+
+            else {
+                alert('Error processing request');
+            }
+        });
+    </script>
+</body>
+
+</html>

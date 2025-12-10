@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sales Reports - Krishna Medical</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        .report-container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .filters {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            align-items: flex-end;
+        }
+
+        .filters .form-group {
+            margin: 0;
+        }
+
+        .report-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        .report-table th,
+        .report-table td {
+            border: 1px solid #ddd;
+            padding: 0.8rem;
+            text-align: left;
+        }
+
+        .report-table th {
+            background: #f8f9fa;
+        }
+
+        .summary-box {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: #e3f2fd;
+            border-radius: 8px;
+        }
+
+        .metric {
+            text-align: center;
+            flex: 1;
+        }
+
+        .metric h3 {
+            margin: 0;
+            font-size: 2rem;
+            color: #2980b9;
+        }
+
+        .metric p {
+            margin: 0;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="report-container">
+        <a href="/" class="nav-back">← Back to Billing</a>
+        <h1>Sales Reports</h1>
+
+        <div class="filters">
+            <div class="form-group">
+                <label>Start Date</label>
+                <input type="date" id="startDate">
+            </div>
+            <div class="form-group">
+                <label>End Date</label>
+                <input type="date" id="endDate">
+            </div>
+            <button class="btn-primary" onclick="generateReport()">Get Report</button>
+            <button class="btn-secondary" onclick="printReport()">Print View</button>
+        </div>
+
+        <div id="reportContent">
+            <div class="summary-box">
+                <div class="metric">
+                    <h3 id="totalSales">₹0</h3>
+                    <p>Total Revenue</p>
+                </div>
+                <div class="metric">
+                    <h3 id="totalOrders">0</h3>
+                    <p>Total Orders</p>
+                </div>
+            </div>
+
+            <table class="report-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Customer</th>
+                        <th>Invoice</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody id="reportBody">
+                    <tr>
+                        <td colspan="4">Select dates to view report.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // Set Defaults to This Month
+        const today = new Date();
+        const firstDay = new Date(today.getFullYear(), today.getMonth(), 1);
+        document.getElementById('startDate').valueAsDate = firstDay;
+        document.getElementById('endDate').valueAsDate = today;
+
+        async function generateReport() {
+            const start = document.getElementById('startDate').value;
+            const end = document.getElementById('endDate').value;
+
+            if (!start || !end) return alert('Select dates');
+
+            const res = await fetch(`/api/reports?start=${start}&end=${end}`);
+            const data = await res.json();
+
+            const tbody = document.getElementById('reportBody');
+            let total = 0;
+
+            if (data.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="4">No sales found in this range.</td></tr>';
+                document.getElementById('totalSales').innerText = '₹0';
+                document.getElementById('totalOrders').innerText = '0';
+                return;
+            }
+
+            tbody.innerHTML = data.map(row => {
+                total += row.amount;
+                return `
+                    <tr>
+                        <td>${row.date} <small>${row.time}</small></td>
+                        <td>${row.customer}</td>
+                        <td>${row.invoice}</td>
+                        <td>₹${row.amount.toFixed(2)}</td>
+                    </tr>
+                `;
+            }).join('');
+
+            document.getElementById('totalSales').innerText = '₹' + total.toFixed(2);
+            document.getElementById('totalOrders').innerText = data.length;
+        }
+
+        function printReport() {
+            const start = document.getElementById('startDate').value;
+            const end = document.getElementById('endDate').value;
+            window.open(`/print_report?start=${start}&end=${end}`, '_blank');
+        }
+
+        // Load initial
+        generateReport();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Krishna Medical Store</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .dashboard-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid #f0f0f0;
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            display: block;
+            color: inherit;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .stat-title {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .stat-icon {
+            font-size: 1.5rem;
+            width: 40px;
+            height: 40px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-sub {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .card-accent-green {
+            border-top: 4px solid var(--success);
+        }
+
+        .card-accent-red {
+            border-top: 4px solid var(--danger);
+        }
+
+        .card-accent-blue {
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .dashboard-sections {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid #f0f0f0;
+        }
+
+        .section-header {
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-bottom: 1px solid #eee;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .list-item {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #f5f5f5;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .list-item:last-child {
+            border-bottom: none;
+        }
+
+        .nav-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 2rem;
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-back:hover {
+            color: var(--primary-color);
+        }
+
+        .btn-link {
+            color: var(--danger);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <a href="/" class="nav-back">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7" />
+            </svg>
+            Back to Billing System
+        </a>
+
+        <header style="margin-bottom: 3rem; display:flex; justify-content:space-between; align-items:flex-end;">
+            <div>
+                <h1 style="font-size:2rem; color:var(--text-dark); margin-bottom:0.5rem;">Sales Dashboard</h1>
+                <p style="color: var(--text-light);">Overview for today's performance</p>
+            </div>
+            <div style="text-align:right;">
+                <div style="font-size:0.9rem; color:var(--text-light);">Today</div>
+                <div style="font-weight:600; font-size:1.1rem;">{{ now }}</div>
+            </div>
+        </header>
+
+        <div class="stats-grid">
+            <!-- Sales Card -->
+            <div class="stat-card card-accent-green">
+                <div class="stat-header">
+                    <span class="stat-title">Total Sales</span>
+                    <div class="stat-icon" style="color:var(--success); background:#e8f5e9;">₹</div>
+                </div>
+                <div class="stat-value" id="todaySales">₹0.00</div>
+                <div class="stat-sub" id="todayOrders">0 Orders processed today</div>
+            </div>
+
+            <!-- Warning Card -->
+            <div class="stat-card card-accent-red">
+                <div class="stat-header">
+                    <span class="stat-title">Low Stock Alerts</span>
+                    <div class="stat-icon" style="color:var(--danger); background:#ffebee;">!</div>
+                </div>
+                <div class="stat-value" id="lowStockCount">0</div>
+                <div class="stat-sub">Items below threshold (< 10)</div>
+                        <a href="/api/reorder_list" target="_blank" class="btn-link"
+                            style="margin-top:1rem; display:inline-block;">
+                            Print Re-order List →
+                        </a>
+                </div>
+
+                <!-- Reports Card -->
+                <a href="/reports" class="stat-card card-accent-blue">
+                    <div class="stat-header">
+                        <span class="stat-title">Sales Reports</span>
+                        <div class="stat-icon" style="color:var(--primary-color); background:var(--primary-light);">📊
+                        </div>
+                    </div>
+                    <div class="stat-value">View</div>
+                    <div class="stat-sub">Analyze monthly trends</div>
+                </a>
+            </div>
+
+            <div class="dashboard-sections">
+                <!-- Low Stock Warning -->
+                <div class="section-card">
+                    <div class="section-header">
+                        <span>⚠️ Critical Stock</span>
+                    </div>
+                    <div id="lowStockList" style="max-height: 400px; overflow-y: auto;">
+                        <div style="text-align:center; color:#999; padding: 2rem;">Loading...</div>
+                    </div>
+                </div>
+
+                <!-- Recent Transactions -->
+                <div class="section-card">
+                    <div class="section-header">
+                        <span>🕒 Recent Transactions</span>
+                    </div>
+                    <div id="recentTxns" style="max-height: 400px; overflow-y: auto;">
+                        <div style="text-align:center; color:#999; padding: 2rem;">Loading...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', async () => {
+                try {
+                    const res = await fetch('/api/dashboard');
+                    const data = await res.json();
+
+                    // Stats
+                    document.getElementById('todaySales').textContent = '₹' + data.sales_today.toFixed(2);
+                    document.getElementById('todayOrders').textContent = data.orders_today;
+
+                    // Low Stock
+                    const lowStockEl = document.getElementById('lowStockList');
+                    if (data.low_stock.length === 0) {
+                        lowStockEl.innerHTML = '<div style="padding:1rem; color:green;">All items well stocked.</div>';
+                    } else {
+                        lowStockEl.innerHTML = data.low_stock.map(item => `
+                        <div class="list-item">
+                            <span>${item.name}</span>
+                            <span class="warning-text">${item.stock} left</span>
+                        </div>
+                    `).join('');
+                    }
+
+                    // Recent
+                    const recentEl = document.getElementById('recentTxns');
+                    if (data.recent.length === 0) {
+                        recentEl.innerHTML = '<div style="padding:1rem;">No sales today.</div>';
+                    } else {
+                        recentEl.innerHTML = data.recent.map(txn => `
+                        <div class="list-item">
+                            <div>
+                                <div style="font-weight:500;">${txn.customer}</div>
+                                <div style="font-size:0.8rem; color:#888;">${txn.time}</div>
+                            </div>
+                            <div style="font-weight:600;">₹${parseFloat(txn.amount).toFixed(2)}</div>
+                        </div>
+                    `).join('');
+                    }
+
+                } catch (err) {
+                    console.error("Dashboard error:", err);
+                }
+            });
+        </script>
+</body>
+
+</html>

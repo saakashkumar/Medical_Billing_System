@@ -1,0 +1,20 @@
+==========================================
+         KRISHNA MEDICAL STORE
+==========================================
+Date: 2025-12-11 00:21:37
+Customer: Aakash Singh
+------------------------------------------
+Item                 Qty   Price    Total   
+------------------------------------------
+Vitamin C Tablets    2     40.0     80.0    
+   Batch:BATCH001 Exp:2026-12-11 GST:12%
+Cotton Roll          1     15.0     15.0    
+   Batch:BATCH001 Exp:2026-12-11 GST:12%
+Hand Sanitizer 100ml 1     50.0     50.0    
+   Batch:BATCH001 Exp:2026-12-11 GST:12%
+------------------------------------------
+Sub Total (Taxable):  129.46
+Total GST:            15.54
+GRAND TOTAL:          145.00
+==========================================
+   Thank you for your business!

@@ -1,0 +1,24 @@
+================================================
+             KRISHNA MEDICAL STORE
+================================================
+Date: 2025-12-11 01:08:36
+Customer: Aakash Singh
+------------------------------------------------
+Item            Qty  MRP     Rate    Total   
+------------------------------------------------
+Paracetamol 350 0.7  10.0    10.0    7.0     
+   Batch:BATCH001 Exp:2025-12-12
+Cough Syrup     1.0  85.5    85.5    85.5    
+   Batch:BATCH001 Exp:2026-12-11
+Vitamin C Table 0.75 40.0    40.0    30.0    
+   Batch:BATCH001 Exp:2026-12-11
+Face Mask N95   1.0  95.0    95.0    95.0    
+   Batch:BATCH001 Exp:2026-12-11
+Bandage 5cm     1.0  10.0    10.0    10.0    
+   Batch:BATCH001 Exp:2026-12-11
+Paracetamol 500 1.0  20.0    20.0    20.0    
+   Batch:BATCH001 Exp:2026-12-11
+------------------------------------------
+GRAND TOTAL:          247.50
+==========================================
+   Thank you for your business!

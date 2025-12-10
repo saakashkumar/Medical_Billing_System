@@ -1,0 +1,26 @@
+date,time,customer,amount,invoice
+
+2025-12-10,23:43:40,Aakash Singh,145.5,Aakash_20251210_234340.txt
+2025-12-10,23:44:30,Aakash Singh,125.5,Aakash Singh_20251210_234430.txt
+2025-12-10,23:45:01,Aakash Singh,140.5,Aakash Si_20251210_234501.txt
+2025-12-10,23:48:15,Aakash Singh,145.5,Aakash Singh_20251210_234815.txt
+2025-12-10,23:54:59,Soumen Pasari,145.5,Soumen_20251210_235459.txt
+2025-12-10,23:57:39,Soumen Pasari,125.5,Soumen Pasari1_20251210_235739.txt
+2025-12-11,00:19:35,Aakash Singh,160.5,Aakash Singh_20251211_001935.txt
+2025-12-11,00:19:44,Soumen Pasari,80.0,Soumen Pasari_20251211_001944.txt
+2025-12-11,00:21:37,Aakash Singh,145.0,Aakash Singh_20251211_002137.txt
+2025-12-11,00:36:51,Soumen Pasari,85.0,Soumen Pasari_20251211_003651.txt
+2025-12-11,00:38:49,Aakash Singh,105.5,Aakash Singh_20251211_003849.txt
+2025-12-11,00:39:11,Aakash Singh,125.5,Aakash Singh_20251211_003911.txt
+2025-12-11,00:40:54,Soumen Pasari,105.5,Soumen Pasari_20251211_004054.txt
+2025-12-11,00:42:42,Aakash Singh,105.5,Aakash Singh_20251211_004242.txt
+2025-12-11,00:44:15,Soumen Pasari,145.5,Soumen Pasari_20251211_004415.txt
+2025-12-11,00:46:20,Soumen Pasari,105.5,Soumen Pasari_20251211_004620.txt
+2025-12-11,00:46:59,Soumen Pasari,85.0,Soumen Pasari_20251211_004659.txt
+2025-12-11,00:49:16,Aakash Singh,74.0,Aakash Singh_20251211_004916.txt
+2025-12-11,01:08:36,Aakash Singh,247.5,Aakash Singh_20251211_010836.txt
+2025-12-11,01:21:17,Pooja Singh,195.5,Pooja Singh_20251211_012117.txt
+2025-12-11,01:31:09,Pooja Singh,140.5,Pooja Singh_20251211_013109.txt
+2025-12-11,01:39:47,Soumen Pasari,35.0,Soumen Pasari_20251211_013947.txt
+2025-12-11,02:12:57,Pooja Singh,86.69,Pooja Singh_20251211_021257.txt
+2025-12-11,02:24:50,Soumen Pasari,17.43,Soumen Pasari_20251211_022450.txt
