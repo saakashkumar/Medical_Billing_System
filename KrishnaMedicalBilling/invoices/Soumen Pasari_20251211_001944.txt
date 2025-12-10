@@ -1,0 +1,18 @@
+==========================================
+         KRISHNA MEDICAL STORE
+==========================================
+Date: 2025-12-11 00:19:44
+Customer: Soumen Pasari
+------------------------------------------
+Item                 Qty   Price    Total   
+------------------------------------------
+Cotton Roll          2     15.0     30.0    
+   Batch:BATCH001 Exp:2026-12-11 GST:12%
+Hand Sanitizer 100ml 1     50.0     50.0    
+   Batch:BATCH001 Exp:2026-12-11 GST:12%
+------------------------------------------
+Sub Total (Taxable):  71.43
+Total GST:            8.57
+GRAND TOTAL:          80.00
+==========================================
+   Thank you for your business!

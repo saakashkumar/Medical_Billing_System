@@ -1,0 +1,18 @@
+==========================================
+         KRISHNA MEDICAL STORE
+==========================================
+Date: 2025-12-11 00:39:11
+Customer: Aakash Singh
+------------------------------------------
+Item                 Qty   Price    Total   
+------------------------------------------
+Cough Syrup          1     85.5     85.5    
+   Batch:BATCH001 Exp:2026-12-11 GST:12%
+Vitamin C Tablets    1     40.0     40.0    
+   Batch:BATCH001 Exp:2026-12-11 GST:12%
+------------------------------------------
+Sub Total (Taxable):  112.05
+Total GST:            13.45
+GRAND TOTAL:          125.50
+==========================================
+   Thank you for your business!

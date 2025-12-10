@@ -1,0 +1,502 @@
+id,name,price,stock,unit,type,category,batch,expiry,gst_rate,per_strip
+1,Himalaya Liv.52,100,219,Strip,Tablet,Medicine,BATCH0001,2028-08-21,5,100
+2,Betadine Ointment,59.54,56,Tube,Cream,Medicine,BATCH0002,2027-08-02,18,0
+3,Sensodyne Fresh Mint,6.43,53,Piece,Piece,Medicine,BATCH0003,2028-04-27,5,0
+4,Nivea Men Deodorant,32.09,173,Piece,Piece,Personal Care,BATCH0004,2028-03-18,18,0
+5,Surgical Gloves,23.88,144,Piece,Piece,Hygiene,BATCH0005,2028-08-27,5,0
+6,Digene Tablets,131.7,117,Strip,Tablet,Medicine,BATCH0006,2028-08-27,5,10
+7,Domperidone 10mg,48.07,116,Piece,Piece,Medicine,BATCH0007,2027-09-02,5,0
+8,Himalaya Neem Face Wash,9.35,246,Piece,Piece,Skin Care,BATCH0008,2029-01-09,18,0
+9,Vitamin B12 Injection,246.96,216,Vial,Injection,Medicine,BATCH0009,2029-09-02,18,0
+10,Aspirin 75mg,48.79,126,Piece,Piece,Medicine,BATCH0010,2027-07-16,18,0
+11,Johnson Baby Lotion,221.0,188,Bottle,Lotion,Baby Care,BATCH0011,2029-02-14,18,0
+12,Amlodipine 5mg,36.71,41,Piece,Piece,Medicine,BATCH0012,2028-05-16,12,0
+13,Zinc 20mg Tablets,156.85,55,Strip,Tablet,Medicine,BATCH0013,2029-03-24,12,10
+14,Clinic Plus Shampoo,188.07,123,Bottle,Shampoo,Personal Care,BATCH0014,2028-01-04,12,0
+15,Nivea Soft Cream,69.33,98,Tube,Cream,Skin Care,BATCH0015,2027-07-01,18,0
+16,Himalaya Liv.52,12.7,216,Piece,Piece,Medicine,BATCH0016,2028-06-20,5,0
+17,Head & Shoulders Shampoo,144.51,193,Bottle,Shampoo,Personal Care,BATCH0017,2028-04-29,18,0
+18,Himalaya Baby Powder,70.57,228,Sachet,Powder,Baby Care,BATCH0018,2027-05-30,5,0
+19,Amoxicillin 500mg,41.23,132,Piece,Piece,Medicine,BATCH0019,2028-08-06,5,0
+20,Domperidone 10mg,46.09,175,Piece,Piece,Medicine,BATCH0020,2028-11-10,5,0
+21,Beardo Beard Oil,147.26,194,Bottle,Oil,Medicine,BATCH0021,2029-09-01,5,0
+22,Vitamin B12 Injection,63.4,220,Vial,Injection,Medicine,BATCH0022,2028-07-27,18,0
+23,Ashwagandha Tablets,88.55,179,Strip,Tablet,Ayurvedic,BATCH0023,2029-05-02,12,10
+24,Betadine Ointment,179.63,65,Tube,Cream,Medicine,BATCH0024,2029-12-14,12,0
+25,Iron Supplement,39.01,250,Piece,Piece,Medicine,BATCH0025,2027-09-17,5,0
+26,Shilajit Resin,12.2,204,Piece,Piece,Ayurvedic,BATCH0026,2029-06-18,18,0
+27,ORS Powder,43.09,182,Sachet,Powder,Medicine,BATCH0027,2029-09-20,18,0
+28,Diclofenac Injection,292.05,250,Vial,Injection,Medicine,BATCH0028,2027-02-28,18,0
+29,Montelukast 10mg,35.68,167,Piece,Piece,Medicine,BATCH0029,2028-08-04,18,0
+30,Baby Massage Oil,98.96,141,Bottle,Oil,Baby Care,BATCH0030,2027-12-25,12,0
+31,Paracetamol 650mg,47.92,214,Piece,Piece,Medicine,BATCH0031,2028-07-28,18,0
+32,Sinarest,27.85,57,Piece,Piece,Medicine,BATCH0032,2028-10-08,18,0
+33,Nivea Men Deodorant,32.4,69,Piece,Piece,Personal Care,BATCH0033,2029-03-11,5,0
+34,Surgical Gloves,47.91,165,Piece,Piece,Hygiene,BATCH0034,2027-02-06,18,0
+35,Himalaya Baby Powder,49.32,58,Sachet,Powder,Baby Care,BATCH0035,2029-02-17,12,0
+36,Volini Gel,46.37,175,Tube,Gel,Skin Care,BATCH0036,2027-07-16,5,0
+37,Gillette Shaving Foam,41.72,224,Piece,Piece,Medicine,BATCH0037,2030-01-30,5,0
+38,Atorvastatin 10mg,34.69,170,Piece,Piece,Medicine,BATCH0038,2028-01-09,12,0
+39,3-Ply Face Mask,44.26,137.0,Piece,Piece,Hygiene,BATCH0039,2028-04-13,18,0
+40,Losartan 50mg,37.08,132,Piece,Piece,Medicine,BATCH0040,2029-03-10,12,0
+41,Savlon Hand Sanitizer,25.32,93,Piece,Piece,Hygiene,BATCH0041,2028-05-10,5,0
+42,Baby Massage Oil,83.58,171,Bottle,Oil,Baby Care,BATCH0042,2028-05-21,18,0
+43,Betadine Ointment,41.01,211,Tube,Cream,Medicine,BATCH0043,2027-06-05,5,0
+44,ORS Powder,74.33,250,Sachet,Powder,Medicine,BATCH0044,2028-12-12,5,0
+45,Dettol Liquid,15.71,201,Piece,Piece,Hygiene,BATCH0045,2029-10-26,5,0
+46,Surgical Gloves,10.95,176,Piece,Piece,Hygiene,BATCH0046,2029-09-30,5,0
+47,Lifebuoy Handwash,41.34,78,Piece,Piece,Personal Care,BATCH0047,2027-08-17,5,0
+48,Dove Soap,34.17,135,Piece,Soap,Personal Care,BATCH0048,2029-09-18,18,0
+49,Ranitidine 150mg,35.3,195,Piece,Piece,Medicine,BATCH0049,2027-08-25,5,0
+50,Lakme Sunscreen SPF 50,37.77,234,Piece,Piece,Skin Care,BATCH0050,2027-09-16,5,0
+51,Amlodipine 5mg,13.56,144,Piece,Piece,Medicine,BATCH0051,2027-11-19,12,0
+52,Thyronorm 50mcg,17.53,93,Piece,Piece,Medicine,BATCH0052,2027-07-09,12,0
+53,Toilet Cleaner,96.64,196,Bottle,Oil,Medicine,BATCH0053,2027-03-07,5,0
+54,Volini Gel,58.29,154,Tube,Gel,Skin Care,BATCH0054,2029-10-17,5,0
+55,Lakme Sunscreen SPF 50,45.61,72,Piece,Piece,Skin Care,BATCH0055,2029-03-22,5,0
+56,Biotique Morning Nectar,16.93,230,Piece,Piece,Medicine,BATCH0056,2029-08-24,12,0
+57,Sensodyne Fresh Mint,36.35,217,Piece,Piece,Medicine,BATCH0057,2029-10-28,5,0
+58,Amlodipine 5mg,18.35,44,Piece,Piece,Medicine,BATCH0058,2027-06-09,18,0
+59,Sebamed Baby Lotion,89.72,179,Bottle,Lotion,Baby Care,BATCH0059,2029-10-08,18,0
+60,3-Ply Face Mask,12.08,158.0,Piece,Piece,Hygiene,BATCH0060,2027-07-19,5,0
+61,ORS Powder,55.7,202,Sachet,Powder,Medicine,BATCH0061,2028-05-31,12,0
+62,Aspirin 75mg,47.37,175,Piece,Piece,Medicine,BATCH0062,2028-06-23,18,0
+63,Neem Capsules,38.74,50,Strip,Capsule,Medicine,BATCH0063,2029-06-12,18,10
+64,Ashwagandha Tablets,110.44,110,Strip,Tablet,Ayurvedic,BATCH0064,2028-07-23,5,10
+65,Sebamed Baby Lotion,120.58,131,Bottle,Lotion,Baby Care,BATCH0065,2027-10-31,18,0
+66,Kadha Mix,18.5,110,Piece,Piece,Ayurvedic,BATCH0066,2027-07-03,5,0
+67,Clinic Plus Shampoo,185.6,174,Bottle,Shampoo,Personal Care,BATCH0067,2027-08-28,5,0
+68,Cotton Roll,14.59,97,Piece,Piece,Medicine,BATCH0068,2027-11-03,12,0
+69,ORS Powder,72.76,124,Sachet,Powder,Medicine,BATCH0069,2028-09-10,5,0
+70,Lux Soap,53.35,210,Piece,Soap,Personal Care,BATCH0070,2028-10-16,18,0
+71,3-Ply Face Mask,5.35,237.0,Piece,Piece,Hygiene,BATCH0071,2028-10-10,18,0
+72,B-Complex Tablets,170.23,64,Strip,Tablet,Medicine,BATCH0072,2028-07-30,5,10
+73,B-Complex Tablets,138.79,69,Strip,Tablet,Medicine,BATCH0073,2028-08-15,12,10
+74,Amla Juice,77.38,117,Bottle,Syrup,Ayurvedic,BATCH0074,2028-03-27,18,0
+75,Himalaya Liv.52,43.38,159,Piece,Piece,Medicine,BATCH0075,2029-11-01,12,0
+76,Ranitidine 150mg,9.15,138,Piece,Piece,Medicine,BATCH0076,2028-08-24,5,0
+77,Paracetamol 650mg,20.01,63,Piece,Piece,Medicine,BATCH0077,2028-07-25,5,0
+78,Lux Soap,42.07,139,Piece,Soap,Personal Care,BATCH0078,2027-02-24,5,0
+79,Vitamin D3 60K,47.53,206,Piece,Piece,Medicine,BATCH0079,2027-12-07,18,0
+80,Amoxicillin 500mg,42.56,179,Piece,Piece,Medicine,BATCH0080,2027-12-05,12,0
+81,Atorvastatin 10mg,6.88,123,Piece,Piece,Medicine,BATCH0081,2027-04-27,12,0
+82,Pantoprazole 40mg,35.69,200,Piece,Piece,Medicine,BATCH0082,2027-09-03,12,0
+83,Surface Disinfectant Spray,44.79,134,Piece,Piece,Medicine,BATCH0083,2027-12-18,5,0
+84,Digene Tablets,176.19,237,Strip,Tablet,Medicine,BATCH0084,2028-02-02,12,10
+85,Metformin 500mg,13.07,115,Piece,Piece,Medicine,BATCH0085,2029-05-28,18,0
+86,Insulin 40IU,17.01,231,Piece,Piece,Medicine,BATCH0086,2027-09-14,12,0
+87,Amoxicillin 500mg,43.64,86,Piece,Piece,Medicine,BATCH0087,2028-03-19,12,0
+88,Baby Wipes Pack,95.78,233,Pack,Pack,Baby Care,BATCH0088,2028-05-16,5,0
+89,Metformin 500mg,34.7,132,Piece,Piece,Medicine,BATCH0089,2028-12-08,12,0
+90,ORS Powder,78.01,101,Sachet,Powder,Medicine,BATCH0090,2029-01-24,18,0
+91,Dettol Liquid,22.99,245,Piece,Piece,Hygiene,BATCH0091,2030-02-07,12,0
+92,Metformin 500mg,10.19,96,Piece,Piece,Medicine,BATCH0092,2028-02-05,18,0
+93,Vitamin B12 Injection,35.52,182,Vial,Injection,Medicine,BATCH0093,2029-07-13,12,0
+94,Sebamed Baby Lotion,154.19,160,Bottle,Lotion,Baby Care,BATCH0094,2027-09-29,12,0
+95,Chyawanprash,13.55,41,Piece,Piece,Ayurvedic,BATCH0095,2029-07-17,5,0
+96,Savlon Hand Sanitizer,46.65,167,Piece,Piece,Hygiene,BATCH0096,2028-03-14,12,0
+97,Dove Soap,22.8,200,Piece,Soap,Personal Care,BATCH0097,2028-12-12,18,0
+98,Sebamed Baby Lotion,192.78,61,Bottle,Lotion,Baby Care,BATCH0098,2028-10-12,18,0
+99,Huggies Dry Pants L,35.01,113,Piece,Piece,Baby Care,BATCH0099,2029-05-09,18,0
+100,Johnson Baby Lotion,174.25,79,Bottle,Lotion,Baby Care,BATCH0100,2029-06-15,18,0
+101,Himalaya Neem Face Wash,35.48,74,Piece,Piece,Skin Care,BATCH0101,2028-10-13,12,0
+102,Toilet Cleaner,221.73,107,Bottle,Oil,Medicine,BATCH0102,2028-09-14,5,0
+103,Dove Soap,51.43,185,Piece,Soap,Personal Care,BATCH0103,2028-11-25,12,0
+104,Lux Soap,37.69,84,Piece,Soap,Personal Care,BATCH0104,2029-12-17,12,0
+105,Dolo 650,34.65,102,Piece,Piece,Medicine,BATCH0105,2029-12-26,18,0
+106,Himalaya Liv.52,32.87,53,Piece,Piece,Medicine,BATCH0106,2028-05-31,18,0
+107,Huggies Dry Pants L,15.11,80,Piece,Piece,Baby Care,BATCH0107,2027-12-03,5,0
+108,Ibuprofen 400mg,16.02,151,Piece,Piece,Medicine,BATCH0108,2027-07-04,12,0
+109,Colgate Toothpaste,110.89,177,Tube,Toothpaste,Personal Care,BATCH0109,2028-03-09,18,0
+110,Biotique Morning Nectar,27.25,92,Piece,Piece,Medicine,BATCH0110,2027-12-04,18,0
+111,Paracetamol 650mg,45.17,250,Piece,Piece,Medicine,BATCH0111,2027-09-11,12,0
+112,Betadine Ointment,64.62,208,Tube,Cream,Medicine,BATCH0112,2029-12-31,12,0
+113,Ranitidine 150mg,30.08,247,Piece,Piece,Medicine,BATCH0113,2027-10-11,12,0
+114,Cough Syrup Honey,154.18,200,Bottle,Syrup,Medicine,BATCH0114,2030-01-27,18,0
+115,Neem Capsules,99.81,223,Strip,Capsule,Medicine,BATCH0115,2029-07-30,18,10
+116,Nivea Men Deodorant,24.2,170,Piece,Piece,Personal Care,BATCH0116,2029-08-06,5,0
+117,Lifebuoy Handwash,25.25,222,Piece,Piece,Personal Care,BATCH0117,2028-06-25,18,0
+118,Clopidogrel 75mg,39.46,163,Piece,Piece,Medicine,BATCH0118,2029-10-24,18,0
+119,Volini Gel,70.21,49,Tube,Gel,Skin Care,BATCH0119,2028-09-12,5,0
+120,Ecosprin 75,20.11,168,Piece,Piece,Medicine,BATCH0120,2027-07-20,5,0
+121,Amoxicillin Dry Syrup,80.06,207,Bottle,Syrup,Medicine,BATCH0121,2027-12-14,18,0
+122,Domperidone 10mg,7.89,134,Piece,Piece,Medicine,BATCH0122,2028-12-13,18,0
+123,Head & Shoulders Shampoo,150.68,82,Bottle,Shampoo,Personal Care,BATCH0123,2029-06-14,12,0
+124,Ashwagandha Tablets,171.37,35,Strip,Tablet,Ayurvedic,BATCH0124,2029-03-25,12,10
+125,Paracetamol 650mg,47.42,106,Piece,Piece,Medicine,BATCH0125,2029-04-13,12,0
+126,Cotton Roll,38.64,169,Piece,Piece,Medicine,BATCH0126,2028-05-01,12,0
+127,Betadine Ointment,78.21,154,Tube,Cream,Medicine,BATCH0127,2027-04-05,12,0
+128,Baby Massage Oil,193.71,234,Bottle,Oil,Baby Care,BATCH0128,2029-05-13,18,0
+129,Dolo 650,42.82,62,Piece,Piece,Medicine,BATCH0129,2030-02-02,5,0
+130,Pond's Bright Beauty Cream,122.86,199,Tube,Cream,Skin Care,BATCH0130,2027-04-01,5,0
+131,Kadha Mix,24.29,148,Piece,Piece,Ayurvedic,BATCH0131,2028-02-12,5,0
+132,Vitamin B12 Injection,129.25,84,Vial,Injection,Medicine,BATCH0132,2029-08-24,12,0
+133,Baby Massage Oil,209.41,127,Bottle,Oil,Baby Care,BATCH0133,2028-08-27,12,0
+134,Diclofenac Injection,254.6,150,Vial,Injection,Medicine,BATCH0134,2027-03-16,18,0
+135,Surgical Gloves,7.34,119,Piece,Piece,Hygiene,BATCH0135,2028-05-09,18,0
+136,ORS Powder,66.87,196,Sachet,Powder,Medicine,BATCH0136,2027-04-28,5,0
+137,Insulin 40IU,13.97,35,Piece,Piece,Medicine,BATCH0137,2027-12-14,5,0
+138,Atorvastatin 10mg,26.31,59,Piece,Piece,Medicine,BATCH0138,2028-04-26,12,0
+139,Diclofenac Injection,235.9,72,Vial,Injection,Medicine,BATCH0139,2027-09-27,5,0
+140,Huggies Dry Pants L,9.86,36,Piece,Piece,Baby Care,BATCH0140,2028-11-04,18,0
+141,Himalaya Neem Face Wash,22.85,213,Piece,Piece,Skin Care,BATCH0141,2028-03-17,5,0
+142,Triphala Tablets,130.5,190,Strip,Tablet,Ayurvedic,BATCH0142,2028-06-16,5,10
+143,Pampers Diapers M,177.54,183,Pack,Pack,Baby Care,BATCH0143,2027-10-10,18,0
+144,Ibuprofen 400mg,20.62,139,Piece,Piece,Medicine,BATCH0144,2029-03-04,5,0
+145,Nivea Men Deodorant,34.14,33,Piece,Piece,Personal Care,BATCH0145,2029-06-14,12,0
+146,B-Complex Tablets,89.36,122,Strip,Tablet,Medicine,BATCH0146,2029-09-03,18,10
+147,Amoxicillin Dry Syrup,106.61,217,Bottle,Syrup,Medicine,BATCH0147,2030-01-08,18,0
+148,Ecosprin 75,32.72,167,Piece,Piece,Medicine,BATCH0148,2029-10-22,12,0
+149,Dove Soap,53.03,181,Piece,Soap,Personal Care,BATCH0149,2028-08-07,12,0
+150,Insulin 40IU,42.38,52,Piece,Piece,Medicine,BATCH0150,2028-08-29,12,0
+151,Insulin 40IU,38.77,175,Piece,Piece,Medicine,BATCH0151,2029-03-22,12,0
+152,Metformin 500mg,27.24,113,Piece,Piece,Medicine,BATCH0152,2028-02-12,12,0
+153,Domperidone 10mg,20.97,96,Piece,Piece,Medicine,BATCH0153,2029-01-02,12,0
+154,Neem Capsules,184.26,100,Strip,Capsule,Medicine,BATCH0154,2027-02-25,18,10
+155,Amlodipine 5mg,8.85,214,Piece,Piece,Medicine,BATCH0155,2029-05-17,12,0
+156,Surface Disinfectant Spray,39.12,206,Piece,Piece,Medicine,BATCH0156,2029-10-07,18,0
+157,Gillette Shaving Foam,25.17,34,Piece,Piece,Medicine,BATCH0157,2027-08-14,12,0
+158,Betadine Ointment,96.62,92,Tube,Cream,Medicine,BATCH0158,2028-10-24,18,0
+159,Ashwagandha Tablets,79.04,171,Strip,Tablet,Ayurvedic,BATCH0159,2030-01-27,12,10
+160,Sensodyne Fresh Mint,49.85,170,Piece,Piece,Medicine,BATCH0160,2028-12-13,12,0
+161,Clinic Plus Shampoo,126.06,94,Bottle,Shampoo,Personal Care,BATCH0161,2028-05-22,5,0
+162,Amlodipine 5mg,19.2,220,Piece,Piece,Medicine,BATCH0162,2030-02-06,18,0
+163,Thyronorm 50mcg,13.62,219,Piece,Piece,Medicine,BATCH0163,2029-10-23,12,0
+164,Triphala Tablets,176.26,164,Strip,Tablet,Ayurvedic,BATCH0164,2028-09-06,5,10
+165,Amlodipine 5mg,18.33,122,Piece,Piece,Medicine,BATCH0165,2028-02-07,12,0
+166,Azithromycin 500mg,36.86,62,Piece,Piece,Medicine,BATCH0166,2028-08-19,5,0
+167,Ranitidine 150mg,29.9,208,Piece,Piece,Medicine,BATCH0167,2027-10-21,18,0
+168,Gillette Shaving Foam,9.62,33,Piece,Piece,Medicine,BATCH0168,2028-09-09,12,0
+169,Whisper Sanitary Pads,24.82,77,Piece,Piece,Medicine,BATCH0169,2027-05-21,12,0
+170,Whisper Sanitary Pads,10.13,46,Piece,Piece,Medicine,BATCH0170,2029-05-05,12,0
+171,Vitamin D3 60K,30.97,205,Piece,Piece,Medicine,BATCH0171,2027-05-25,5,0
+172,Amoxicillin Dry Syrup,155.45,107,Bottle,Syrup,Medicine,BATCH0172,2027-07-29,5,0
+173,Aspirin 75mg,30.11,136,Piece,Piece,Medicine,BATCH0173,2028-05-12,18,0
+174,Himalaya Neem Face Wash,25.27,143,Piece,Piece,Skin Care,BATCH0174,2028-10-05,18,0
+175,Sensodyne Fresh Mint,18.74,188,Piece,Piece,Medicine,BATCH0175,2027-06-08,18,0
+176,Calcium 500mg,47.64,83,Piece,Piece,Medicine,BATCH0176,2028-04-12,12,0
+177,Zinc 20mg Tablets,45.13,74,Strip,Tablet,Medicine,BATCH0177,2027-07-08,5,10
+178,Paracetamol 650mg,23.38,206,Piece,Piece,Medicine,BATCH0178,2029-09-24,12,0
+179,Amoxicillin 500mg,15.42,210,Piece,Piece,Medicine,BATCH0179,2028-09-06,18,0
+180,Clinic Plus Shampoo,92.1,89,Bottle,Shampoo,Personal Care,BATCH0180,2028-07-30,18,0
+181,Triphala Tablets,125.79,80,Strip,Tablet,Ayurvedic,BATCH0181,2029-06-24,5,10
+182,Surgical Gloves,15.12,68,Piece,Piece,Hygiene,BATCH0182,2028-08-02,5,0
+183,Vitamin D3 60K,7.68,232,Piece,Piece,Medicine,BATCH0183,2028-10-26,18,0
+184,Hand Sanitizer 100ml,46.45,142,Piece,Piece,Hygiene,BATCH0184,2027-10-17,12,0
+185,Pampers Diapers M,154.96,99,Pack,Pack,Baby Care,BATCH0185,2029-11-25,18,0
+186,Beardo Beard Oil,154.42,183,Bottle,Oil,Medicine,BATCH0186,2027-04-27,12,0
+187,Himalaya Baby Powder,56.22,36,Sachet,Powder,Baby Care,BATCH0187,2027-08-11,5,0
+188,Chyawanprash,31.42,35,Piece,Piece,Ayurvedic,BATCH0188,2028-08-09,18,0
+189,Ibuprofen 400mg,39.34,74,Piece,Piece,Medicine,BATCH0189,2029-09-25,18,0
+190,Lux Soap,56.64,76,Piece,Soap,Personal Care,BATCH0190,2029-07-16,18,0
+191,Gillette Shaving Foam,48.61,150,Piece,Piece,Medicine,BATCH0191,2029-01-17,12,0
+192,Mamaearth Baby Shampoo,134.58,56,Bottle,Shampoo,Baby Care,BATCH0192,2027-12-31,12,0
+193,Aloe Vera Gel,116.3,103,Tube,Gel,Skin Care,BATCH0193,2029-05-05,18,0
+194,Amoxicillin 500mg,25.47,110,Piece,Piece,Medicine,BATCH0194,2028-07-05,12,0
+195,Montelukast 10mg,48.66,133,Piece,Piece,Medicine,BATCH0195,2029-12-24,5,0
+196,Surgical Gloves,25.79,43,Piece,Piece,Hygiene,BATCH0196,2028-02-24,18,0
+197,Vaseline Aloe Gel,108.49,157,Tube,Gel,Skin Care,BATCH0197,2029-07-29,5,0
+198,Pantoprazole 40mg,17.02,63,Piece,Piece,Medicine,BATCH0198,2028-09-16,12,0
+199,Gillette Shaving Foam,10.46,191,Piece,Piece,Medicine,BATCH0199,2028-06-09,18,0
+200,Digene Tablets,69.72,33,Strip,Tablet,Medicine,BATCH0200,2029-05-20,5,10
+201,Betadine Ointment,178.92,59,Tube,Cream,Medicine,BATCH0201,2029-09-07,5,0
+202,Kadha Mix,42.45,157,Piece,Piece,Ayurvedic,BATCH0202,2028-09-24,18,0
+203,Ecosprin 75,23.7,153,Piece,Piece,Medicine,BATCH0203,2029-09-29,5,0
+204,Clinic Plus Shampoo,173.72,128,Bottle,Shampoo,Personal Care,BATCH0204,2028-03-01,18,0
+205,Dettol Liquid,38.58,64,Piece,Piece,Hygiene,BATCH0205,2027-06-27,12,0
+206,Colgate Toothpaste,67.19,231,Tube,Toothpaste,Personal Care,BATCH0206,2029-12-10,12,0
+207,Paracetamol 650mg,17.73,106,Piece,Piece,Medicine,BATCH0207,2029-11-03,5,0
+208,Dettol Bathing Soap,41.54,118,Piece,Soap,Personal Care,BATCH0208,2028-12-16,18,0
+209,Surgical Gloves,21.97,112,Piece,Piece,Hygiene,BATCH0209,2028-02-26,18,0
+210,Volini Gel,102.9,89,Tube,Gel,Skin Care,BATCH0210,2029-05-26,5,0
+211,Sebamed Baby Lotion,206.6,210,Bottle,Lotion,Baby Care,BATCH0211,2029-03-26,12,0
+212,Amoxicillin Dry Syrup,114.39,39,Bottle,Syrup,Medicine,BATCH0212,2027-10-21,18,0
+213,Triphala Tablets,73.12,55,Strip,Tablet,Ayurvedic,BATCH0213,2029-07-25,5,10
+214,3-Ply Face Mask,45.97,33,Piece,Piece,Hygiene,BATCH0214,2027-11-27,12,0
+215,Amoxicillin Dry Syrup,59.73,230,Bottle,Syrup,Medicine,BATCH0215,2028-07-31,12,0
+216,Brahmi Tablets,130.83,196,Strip,Tablet,Ayurvedic,BATCH0216,2027-07-19,12,10
+217,Cotton Roll,22.1,111,Piece,Piece,Medicine,BATCH0217,2029-10-31,18,0
+218,Amoxicillin 500mg,32.79,90,Piece,Piece,Medicine,BATCH0218,2028-09-15,5,0
+219,Iron Supplement,24.53,55,Piece,Piece,Medicine,BATCH0219,2027-08-29,12,0
+220,Dolo 650,36.23,37,Piece,Piece,Medicine,BATCH0220,2027-05-10,12,0
+221,Omeprazole 20mg,18.2,125,Piece,Piece,Medicine,BATCH0221,2029-07-06,5,0
+222,Insulin 40IU,28.9,174,Piece,Piece,Medicine,BATCH0222,2028-02-08,5,0
+223,Sinarest,8.55,127,Piece,Piece,Medicine,BATCH0223,2028-06-12,12,0
+224,Ashwagandha Tablets,42.9,148,Strip,Tablet,Ayurvedic,BATCH0224,2028-07-09,12,10
+225,Diclofenac Injection,208.38,235,Vial,Injection,Medicine,BATCH0225,2029-09-14,12,0
+226,Surgical Gloves,12.11,143,Piece,Piece,Hygiene,BATCH0226,2029-01-12,18,0
+227,Pampers Diapers M,145.84,138,Pack,Pack,Baby Care,BATCH0227,2028-07-01,12,0
+228,Pampers Diapers M,79.88,128,Pack,Pack,Baby Care,BATCH0228,2029-10-21,5,0
+229,Volini Gel,81.95,121,Tube,Gel,Skin Care,BATCH0229,2028-10-02,18,0
+230,Johnson Baby Lotion,83.73,242,Bottle,Lotion,Baby Care,BATCH0230,2029-04-25,12,0
+231,Azithromycin 500mg,30.47,205,Piece,Piece,Medicine,BATCH0231,2027-05-16,18,0
+232,Beardo Beard Oil,221.58,103,Bottle,Oil,Medicine,BATCH0232,2028-05-21,18,0
+233,Nivea Soft Cream,70.66,78,Tube,Cream,Skin Care,BATCH0233,2028-07-02,18,0
+234,Cough Syrup Honey,131.67,190,Bottle,Syrup,Medicine,BATCH0234,2027-04-26,12,0
+235,Lux Soap,21.33,123,Piece,Soap,Personal Care,BATCH0235,2027-11-01,5,0
+236,Johnson Baby Lotion,135.54,136,Bottle,Lotion,Baby Care,BATCH0236,2028-01-30,5,0
+237,Atorvastatin 10mg,40.39,123,Piece,Piece,Medicine,BATCH0237,2030-01-27,18,0
+238,Ecosprin 75,42.37,95,Piece,Piece,Medicine,BATCH0238,2029-10-18,12,0
+239,Baby Massage Oil,216.72,149,Bottle,Oil,Baby Care,BATCH0239,2027-07-09,5,0
+240,Betadine Ointment,160.42,215,Tube,Cream,Medicine,BATCH0240,2029-04-28,18,0
+241,Vaseline Aloe Gel,49.93,131,Tube,Gel,Skin Care,BATCH0241,2027-03-05,12,0
+242,Cotton Roll,10.56,124,Piece,Piece,Medicine,BATCH0242,2028-07-25,18,0
+243,Himalaya Neem Face Wash,42.01,125,Piece,Piece,Skin Care,BATCH0243,2027-09-14,18,0
+244,Burnol Ointment,106.01,188,Tube,Cream,Medicine,BATCH0244,2028-12-07,18,0
+245,Betadine Ointment,130.67,192,Tube,Cream,Medicine,BATCH0245,2029-09-12,18,0
+246,Pampers Diapers M,147.39,59,Pack,Pack,Baby Care,BATCH0246,2027-11-18,5,0
+247,Amoxicillin 500mg,18.7,156,Piece,Piece,Medicine,BATCH0247,2027-09-30,5,0
+248,Volini Gel,137.6,64,Tube,Gel,Skin Care,BATCH0248,2029-04-10,12,0
+249,Cetaphil Moisturizer,35.17,220,Piece,Piece,Skin Care,BATCH0249,2029-06-12,18,0
+250,Amoxicillin Dry Syrup,165.1,197,Bottle,Syrup,Medicine,BATCH0250,2027-08-26,12,0
+251,Giloy Juice,103.06,101,Bottle,Syrup,Ayurvedic,BATCH0251,2027-04-13,18,0
+252,Cetaphil Moisturizer,14.78,143,Piece,Piece,Skin Care,BATCH0252,2028-06-02,12,0
+253,Calcium 500mg,49.14,124,Piece,Piece,Medicine,BATCH0253,2029-02-08,5,0
+254,Pond's Bright Beauty Cream,78.62,61,Tube,Cream,Skin Care,BATCH0254,2029-08-24,5,0
+255,Domperidone 10mg,33.88,182,Piece,Piece,Medicine,BATCH0255,2027-03-20,5,0
+256,Mamaearth Baby Shampoo,121.41,62,Bottle,Shampoo,Baby Care,BATCH0256,2028-03-31,5,0
+257,Toilet Cleaner,115.22,85,Bottle,Oil,Medicine,BATCH0257,2028-05-27,12,0
+258,Paracetamol Syrup Kids,152.52,182,Bottle,Syrup,Medicine,BATCH0258,2027-02-10,12,0
+259,Paracetamol Syrup Kids,178.38,168,Bottle,Syrup,Medicine,BATCH0259,2028-07-02,5,0
+260,Montelukast 10mg,34.75,36,Piece,Piece,Medicine,BATCH0260,2027-11-01,5,0
+261,Nivea Soft Cream,150.6,90,Tube,Cream,Skin Care,BATCH0261,2028-11-29,5,0
+262,Sinarest,16.94,62,Piece,Piece,Medicine,BATCH0262,2029-06-16,18,0
+263,Montelukast 10mg,38.55,151,Piece,Piece,Medicine,BATCH0263,2029-08-11,12,0
+264,Dettol Liquid,31.71,145,Piece,Piece,Hygiene,BATCH0264,2029-12-02,5,0
+265,Giloy Juice,55.64,230,Bottle,Syrup,Ayurvedic,BATCH0265,2030-01-07,12,0
+266,Clinic Plus Shampoo,189.37,37,Bottle,Shampoo,Personal Care,BATCH0266,2027-06-09,12,0
+267,Lakme Sunscreen SPF 50,24.18,57,Piece,Piece,Skin Care,BATCH0267,2029-11-05,18,0
+268,Lux Soap,22.94,50,Piece,Soap,Personal Care,BATCH0268,2028-11-25,18,0
+269,Paracetamol Syrup Kids,58.54,100,Bottle,Syrup,Medicine,BATCH0269,2028-12-01,12,0
+270,Neem Capsules,146.72,146,Strip,Capsule,Medicine,BATCH0270,2029-12-06,18,10
+271,Dove Soap,23.97,209,Piece,Soap,Personal Care,BATCH0271,2027-09-27,18,0
+272,Toilet Cleaner,202.54,85,Bottle,Oil,Medicine,BATCH0272,2029-07-04,12,0
+273,Burnol Ointment,97.93,241,Tube,Cream,Medicine,BATCH0273,2029-08-21,12,0
+274,Colgate Toothpaste,98.37,110,Tube,Toothpaste,Personal Care,BATCH0274,2029-06-28,12,0
+275,Diclofenac Injection,127.93,69,Vial,Injection,Medicine,BATCH0275,2029-10-03,5,0
+276,Iron Supplement,42.43,53,Piece,Piece,Medicine,BATCH0276,2029-07-08,5,0
+277,Cetaphil Moisturizer,41.53,172,Piece,Piece,Skin Care,BATCH0277,2027-06-07,18,0
+278,Surface Disinfectant Spray,30.28,201,Piece,Piece,Medicine,BATCH0278,2027-10-13,12,0
+279,Nivea Soft Cream,162.31,222,Tube,Cream,Skin Care,BATCH0279,2029-06-20,18,0
+280,Ranitidine 150mg,48.58,183,Piece,Piece,Medicine,BATCH0280,2028-11-05,12,0
+281,B-Complex Tablets,112.47,84,Strip,Tablet,Medicine,BATCH0281,2027-12-18,18,10
+282,Whisper Sanitary Pads,15.09,57,Piece,Piece,Medicine,BATCH0282,2029-01-22,18,0
+283,Cetaphil Moisturizer,10.17,101,Piece,Piece,Skin Care,BATCH0283,2028-05-13,12,0
+284,Surface Disinfectant Spray,48.85,239,Piece,Piece,Medicine,BATCH0284,2027-03-30,18,0
+285,Ecosprin 75,6.3,99,Piece,Piece,Medicine,BATCH0285,2028-10-29,12,0
+286,Baby Wipes Pack,50.92,66,Pack,Pack,Baby Care,BATCH0286,2029-05-05,5,0
+287,Paracetamol Syrup Kids,146.33,37,Bottle,Syrup,Medicine,BATCH0287,2027-08-11,18,0
+288,3-Ply Face Mask,14.68,137,Piece,Piece,Hygiene,BATCH0288,2029-08-22,12,0
+289,Digene Tablets,79.21,214,Strip,Tablet,Medicine,BATCH0289,2028-11-30,18,10
+290,Neem Capsules,48.69,43,Strip,Capsule,Medicine,BATCH0290,2027-12-20,5,10
+291,Brahmi Tablets,27.96,50,Strip,Tablet,Ayurvedic,BATCH0291,2028-08-15,12,10
+292,Sensodyne Fresh Mint,26.85,143,Piece,Piece,Medicine,BATCH0292,2029-06-02,12,0
+293,Domperidone 10mg,38.97,59,Piece,Piece,Medicine,BATCH0293,2029-01-11,12,0
+294,Montelukast 10mg,17.75,203,Piece,Piece,Medicine,BATCH0294,2029-10-28,18,0
+295,Huggies Dry Pants L,7.04,131,Piece,Piece,Baby Care,BATCH0295,2027-05-28,5,0
+296,Pantoprazole 40mg,18.56,84,Piece,Piece,Medicine,BATCH0296,2027-11-13,12,0
+297,Johnson Baby Lotion,135.78,31,Bottle,Lotion,Baby Care,BATCH0297,2029-11-19,18,0
+298,Dove Soap,27.03,127,Piece,Soap,Personal Care,BATCH0298,2030-01-30,18,0
+299,Burnol Ointment,110.04,243,Tube,Cream,Medicine,BATCH0299,2029-01-30,5,0
+300,Pond's Bright Beauty Cream,160.65,40,Tube,Cream,Skin Care,BATCH0300,2029-07-17,5,0
+301,Clinic Plus Shampoo,236.6,250,Bottle,Shampoo,Personal Care,BATCH0301,2028-11-07,18,0
+302,Sensodyne Fresh Mint,30.8,211,Piece,Piece,Medicine,BATCH0302,2029-06-09,12,0
+303,Montelukast 10mg,23.23,113,Piece,Piece,Medicine,BATCH0303,2028-01-22,18,0
+304,Clinic Plus Shampoo,221.44,122,Bottle,Shampoo,Personal Care,BATCH0304,2027-08-04,12,0
+305,B-Complex Tablets,58.93,180,Strip,Tablet,Medicine,BATCH0305,2029-05-05,18,10
+306,Zinc 20mg Tablets,83.32,109,Strip,Tablet,Medicine,BATCH0306,2028-12-31,5,10
+307,Mamaearth Baby Shampoo,212.45,49,Bottle,Shampoo,Baby Care,BATCH0307,2029-12-16,18,0
+308,Montelukast 10mg,28.88,79,Piece,Piece,Medicine,BATCH0308,2029-01-20,12,0
+309,Kadha Mix,41.68,90,Piece,Piece,Ayurvedic,BATCH0309,2027-09-03,5,0
+310,Diclofenac Injection,79.25,184,Vial,Injection,Medicine,BATCH0310,2027-12-15,18,0
+311,Vitamin D3 60K,12.97,227,Piece,Piece,Medicine,BATCH0311,2029-11-12,12,0
+312,Hand Sanitizer 100ml,39.19,144,Piece,Piece,Hygiene,BATCH0312,2028-11-27,18,0
+313,Sebamed Baby Lotion,105.66,47,Bottle,Lotion,Baby Care,BATCH0313,2029-09-22,12,0
+314,Shilajit Resin,18.63,100,Piece,Piece,Ayurvedic,BATCH0314,2027-05-31,12,0
+315,Nivea Men Deodorant,8.34,148,Piece,Piece,Personal Care,BATCH0315,2029-08-18,5,0
+316,Omeprazole 20mg,21.59,103,Piece,Piece,Medicine,BATCH0316,2027-07-12,18,0
+317,Iron Supplement,32.68,159,Piece,Piece,Medicine,BATCH0317,2029-04-02,12,0
+318,Ashwagandha Tablets,108.69,232,Strip,Tablet,Ayurvedic,BATCH0318,2027-04-30,12,10
+319,Chyawanprash,34.33,112,Piece,Piece,Ayurvedic,BATCH0319,2029-10-06,18,0
+320,Amoxicillin Dry Syrup,174.5,145,Bottle,Syrup,Medicine,BATCH0320,2027-09-04,12,0
+321,Zinc 20mg Tablets,100.73,74,Strip,Tablet,Medicine,BATCH0321,2027-04-26,5,10
+322,Lux Soap,59.64,164,Piece,Soap,Personal Care,BATCH0322,2030-01-10,18,0
+323,Digene Tablets,78.22,102,Strip,Tablet,Medicine,BATCH0323,2029-04-08,12,10
+324,Baby Massage Oil,195.41,43,Bottle,Oil,Baby Care,BATCH0324,2028-12-21,5,0
+325,Mamaearth Baby Shampoo,96.07,203,Bottle,Shampoo,Baby Care,BATCH0325,2029-04-06,12,0
+326,Diclofenac Injection,224.03,198,Vial,Injection,Medicine,BATCH0326,2027-12-09,12,0
+327,Zinc 20mg Tablets,113.24,66,Strip,Tablet,Medicine,BATCH0327,2029-01-21,12,10
+328,Pond's Bright Beauty Cream,58.05,211,Tube,Cream,Skin Care,BATCH0328,2027-07-28,12,0
+329,Surface Disinfectant Spray,21.95,232,Piece,Piece,Medicine,BATCH0329,2028-12-08,5,0
+330,3-Ply Face Mask,9.21,201,Piece,Piece,Hygiene,BATCH0330,2029-06-21,18,0
+331,Vaseline Aloe Gel,42.01,109,Tube,Gel,Skin Care,BATCH0331,2028-02-09,5,0
+332,Baby Massage Oil,241.1,154,Bottle,Oil,Baby Care,BATCH0332,2028-03-04,5,0
+333,Cough Syrup Honey,70.14,105,Bottle,Syrup,Medicine,BATCH0333,2027-08-31,18,0
+334,Surgical Gloves,42.58,164,Piece,Piece,Hygiene,BATCH0334,2027-04-23,18,0
+335,Baby Massage Oil,228.99,188,Bottle,Oil,Baby Care,BATCH0335,2027-10-31,18,0
+336,Himalaya Neem Face Wash,11.94,76,Piece,Piece,Skin Care,BATCH0336,2028-01-10,18,0
+337,Lux Soap,21.75,123,Piece,Soap,Personal Care,BATCH0337,2028-06-05,12,0
+338,Giloy Juice,87.04,221,Bottle,Syrup,Ayurvedic,BATCH0338,2029-08-12,5,0
+339,Cotton Roll,15.76,237,Piece,Piece,Medicine,BATCH0339,2029-09-22,5,0
+340,Cetaphil Moisturizer,35.52,176,Piece,Piece,Skin Care,BATCH0340,2029-07-26,12,0
+341,Johnson Baby Soap,51.12,158,Piece,Soap,Baby Care,BATCH0341,2030-01-20,12,0
+342,Digene Tablets,150.7,235,Strip,Tablet,Medicine,BATCH0342,2027-11-15,12,10
+343,Ranitidine 150mg,33.85,125,Piece,Piece,Medicine,BATCH0343,2027-09-03,18,0
+344,Savlon Hand Sanitizer,43.3,102,Piece,Piece,Hygiene,BATCH0344,2027-07-26,5,0
+345,Ecosprin 75,25.22,161,Piece,Piece,Medicine,BATCH0345,2027-12-03,12,0
+346,Iron Supplement,47.59,86,Piece,Piece,Medicine,BATCH0346,2029-08-16,12,0
+347,Metformin 500mg,23.67,131,Piece,Piece,Medicine,BATCH0347,2029-11-29,12,0
+348,Volini Gel,82.48,50,Tube,Gel,Skin Care,BATCH0348,2029-03-13,5,0
+349,Metformin 500mg,19.34,55,Piece,Piece,Medicine,BATCH0349,2028-12-22,5,0
+350,Cough Syrup Honey,54.98,242,Bottle,Syrup,Medicine,BATCH0350,2029-09-29,18,0
+351,Cough Syrup Honey,148.65,150,Bottle,Syrup,Medicine,BATCH0351,2029-08-11,18,0
+352,Paracetamol 650mg,45.76,34,Piece,Piece,Medicine,BATCH0352,2028-07-13,5,0
+353,Amoxicillin Dry Syrup,121.34,216,Bottle,Syrup,Medicine,BATCH0353,2030-01-20,12,0
+354,Montelukast 10mg,39.93,90,Piece,Piece,Medicine,BATCH0354,2028-10-13,5,0
+355,Ranitidine 150mg,15.73,193,Piece,Piece,Medicine,BATCH0355,2029-08-29,5,0
+356,Montelukast 10mg,42.65,157,Piece,Piece,Medicine,BATCH0356,2030-02-06,5,0
+357,Shilajit Resin,28.19,91,Piece,Piece,Ayurvedic,BATCH0357,2027-11-26,12,0
+358,Sensodyne Fresh Mint,5.07,120,Piece,Piece,Medicine,BATCH0358,2028-06-11,18,0
+359,Colgate Toothpaste,54.99,201,Tube,Toothpaste,Personal Care,BATCH0359,2027-07-30,18,0
+360,Vaseline Aloe Gel,47.44,164,Tube,Gel,Skin Care,BATCH0360,2029-12-10,18,0
+361,Toilet Cleaner,83.46,150,Bottle,Oil,Medicine,BATCH0361,2027-05-05,18,0
+362,Biotique Morning Nectar,49.15,94,Piece,Piece,Medicine,BATCH0362,2027-03-10,12,0
+363,ORS Powder,40.69,217,Sachet,Powder,Medicine,BATCH0363,2027-09-05,18,0
+364,Mamaearth Baby Shampoo,102.68,120,Bottle,Shampoo,Baby Care,BATCH0364,2028-12-29,18,0
+365,Sinarest,42.37,205,Piece,Piece,Medicine,BATCH0365,2029-09-13,18,0
+366,Whisper Sanitary Pads,33.43,237,Piece,Piece,Medicine,BATCH0366,2027-11-08,5,0
+367,Clinic Plus Shampoo,86.29,81,Bottle,Shampoo,Personal Care,BATCH0367,2027-05-05,5,0
+368,Ibuprofen 400mg,19.2,109,Piece,Piece,Medicine,BATCH0368,2029-12-26,12,0
+369,Surgical Gloves,26.3,39,Piece,Piece,Hygiene,BATCH0369,2028-03-02,12,0
+370,Nivea Soft Cream,160.7,42,Tube,Cream,Skin Care,BATCH0370,2028-12-15,12,0
+371,Aspirin 75mg,40.97,141,Piece,Piece,Medicine,BATCH0371,2029-05-04,18,0
+372,Lux Soap,55.79,128,Piece,Soap,Personal Care,BATCH0372,2028-12-30,5,0
+373,Beardo Beard Oil,197.65,124,Bottle,Oil,Medicine,BATCH0373,2030-01-03,12,0
+374,Zinc 20mg Tablets,136.33,50,Strip,Tablet,Medicine,BATCH0374,2029-07-05,18,10
+375,Thyronorm 50mcg,29.55,112,Piece,Piece,Medicine,BATCH0375,2027-09-03,5,0
+376,Himalaya Baby Powder,59.66,108,Sachet,Powder,Baby Care,BATCH0376,2029-08-06,18,0
+377,Sensodyne Fresh Mint,12.5,143,Piece,Piece,Medicine,BATCH0377,2029-01-24,12,0
+378,Ibuprofen 400mg,37.71,120,Piece,Piece,Medicine,BATCH0378,2029-07-14,12,0
+379,Himalaya Liv.52,49.1,44,Piece,Piece,Medicine,BATCH0379,2027-07-08,18,0
+380,Himalaya Liv.52,23.28,161,Piece,Piece,Medicine,BATCH0380,2027-12-29,5,0
+381,Paracetamol Syrup Kids,160.33,203,Bottle,Syrup,Medicine,BATCH0381,2029-07-21,5,0
+382,Atorvastatin 10mg,8.03,229,Piece,Piece,Medicine,BATCH0382,2029-02-24,12,0
+383,Biotique Morning Nectar,47.73,38,Piece,Piece,Medicine,BATCH0383,2027-12-16,18,0
+384,Dettol Bathing Soap,57.95,125,Piece,Soap,Personal Care,BATCH0384,2029-08-02,5,0
+385,Chyawanprash,11.2,123,Piece,Piece,Ayurvedic,BATCH0385,2029-04-30,12,0
+386,Clopidogrel 75mg,16.23,59,Piece,Piece,Medicine,BATCH0386,2027-03-30,18,0
+387,Thyronorm 50mcg,27.46,129,Piece,Piece,Medicine,BATCH0387,2027-10-04,12,0
+388,Vitamin B12 Injection,218.61,84,Vial,Injection,Medicine,BATCH0388,2028-09-11,18,0
+389,Gillette Shaving Foam,14.01,64,Piece,Piece,Medicine,BATCH0389,2027-07-06,12,0
+390,Sinarest,45.44,143,Piece,Piece,Medicine,BATCH0390,2027-08-03,18,0
+391,Sebamed Baby Lotion,193.53,211,Bottle,Lotion,Baby Care,BATCH0391,2027-06-17,18,0
+392,Surgical Gloves,18.07,106,Piece,Piece,Hygiene,BATCH0392,2027-12-24,18,0
+393,Himalaya Liv.52,12.83,122,Piece,Piece,Medicine,BATCH0393,2029-12-12,5,0
+394,Aspirin 75mg,49.33,232,Piece,Piece,Medicine,BATCH0394,2027-11-16,5,0
+395,Beardo Beard Oil,84.47,171,Bottle,Oil,Medicine,BATCH0395,2029-03-01,12,0
+396,Toilet Cleaner,102.06,52,Bottle,Oil,Medicine,BATCH0396,2027-06-19,12,0
+397,Pond's Bright Beauty Cream,179.94,214,Tube,Cream,Skin Care,BATCH0397,2029-10-12,18,0
+398,Aloe Vera Gel,124.61,240,Tube,Gel,Skin Care,BATCH0398,2027-07-06,5,0
+399,Sebamed Baby Lotion,189.2,145,Bottle,Lotion,Baby Care,BATCH0399,2029-09-16,18,0
+400,Savlon Hand Sanitizer,20.5,242,Piece,Piece,Hygiene,BATCH0400,2028-02-12,5,0
+401,Dove Soap,40.11,44,Piece,Soap,Personal Care,BATCH0401,2027-10-17,18,0
+402,Amoxicillin Dry Syrup,89.54,71,Bottle,Syrup,Medicine,BATCH0402,2028-11-26,18,0
+403,Betadine Ointment,88.44,162,Tube,Cream,Medicine,BATCH0403,2028-09-08,5,0
+404,Diclofenac Injection,78.98,171,Vial,Injection,Medicine,BATCH0404,2028-08-20,5,0
+405,Shilajit Resin,18.63,166,Piece,Piece,Ayurvedic,BATCH0405,2027-08-15,18,0
+406,Kadha Mix,12.59,178,Piece,Piece,Ayurvedic,BATCH0406,2027-12-17,5,0
+407,Brahmi Tablets,135.3,184,Strip,Tablet,Ayurvedic,BATCH0407,2028-12-27,18,10
+408,Ibuprofen 400mg,42.14,37,Piece,Piece,Medicine,BATCH0408,2027-07-21,5,0
+409,Kadha Mix,39.7,97,Piece,Piece,Ayurvedic,BATCH0409,2028-04-11,18,0
+410,Colgate Toothpaste,89.45,37,Tube,Toothpaste,Personal Care,BATCH0410,2029-11-20,18,0
+411,Surgical Gloves,18.04,107,Piece,Piece,Hygiene,BATCH0411,2029-10-21,5,0
+412,Lakme Sunscreen SPF 50,18.38,48,Piece,Piece,Skin Care,BATCH0412,2027-06-07,5,0
+413,Lux Soap,36.62,148,Piece,Soap,Personal Care,BATCH0413,2028-03-28,12,0
+414,Amla Juice,68.68,250,Bottle,Syrup,Ayurvedic,BATCH0414,2028-11-19,18,0
+415,Baby Wipes Pack,196.31,63,Pack,Pack,Baby Care,BATCH0415,2029-03-04,18,0
+416,Surface Disinfectant Spray,9.78,91,Piece,Piece,Medicine,BATCH0416,2029-09-17,5,0
+417,Ecosprin 75,25.23,66,Piece,Piece,Medicine,BATCH0417,2027-08-22,5,0
+418,Johnson Baby Lotion,240.72,187,Bottle,Lotion,Baby Care,BATCH0418,2029-06-10,5,0
+419,Digene Tablets,150.16,177,Strip,Tablet,Medicine,BATCH0419,2028-11-06,5,10
+420,Digene Tablets,99.72,161,Strip,Tablet,Medicine,BATCH0420,2029-09-18,12,10
+421,Huggies Dry Pants L,27.38,53,Piece,Piece,Baby Care,BATCH0421,2029-04-20,18,0
+422,Clinic Plus Shampoo,244.34,85,Bottle,Shampoo,Personal Care,BATCH0422,2029-01-27,5,0
+423,Ranitidine 150mg,17.66,182,Piece,Piece,Medicine,BATCH0423,2029-09-25,12,0
+424,Cotton Roll,5.37,57,Piece,Piece,Medicine,BATCH0424,2029-07-06,5,0
+425,Vitamin B12 Injection,225.06,225,Vial,Injection,Medicine,BATCH0425,2029-05-10,12,0
+426,Ibuprofen 400mg,23.03,175,Piece,Piece,Medicine,BATCH0426,2028-03-09,12,0
+427,Toilet Cleaner,129.06,128,Bottle,Oil,Medicine,BATCH0427,2029-12-03,12,0
+428,Toilet Cleaner,127.55,189,Bottle,Oil,Medicine,BATCH0428,2027-10-06,5,0
+429,Calcium 500mg,22.73,233,Piece,Piece,Medicine,BATCH0429,2028-12-30,18,0
+430,Vaseline Aloe Gel,123.05,80,Tube,Gel,Skin Care,BATCH0430,2029-12-13,12,0
+431,Nivea Men Deodorant,6.81,39,Piece,Piece,Personal Care,BATCH0431,2027-11-12,18,0
+432,Mamaearth Baby Shampoo,216.67,162,Bottle,Shampoo,Baby Care,BATCH0432,2029-08-28,5,0
+433,Amla Juice,166.11,65,Bottle,Syrup,Ayurvedic,BATCH0433,2028-12-07,18,0
+434,Sebamed Baby Lotion,107.63,187,Bottle,Lotion,Baby Care,BATCH0434,2028-10-09,18,0
+435,Baby Massage Oil,166.24,160,Bottle,Oil,Baby Care,BATCH0435,2030-01-30,12,0
+436,Hand Sanitizer 100ml,18.49,238,Piece,Piece,Hygiene,BATCH0436,2027-03-11,12,0
+437,Mamaearth Baby Shampoo,194.55,136,Bottle,Shampoo,Baby Care,BATCH0437,2028-10-27,18,0
+438,Shilajit Resin,6.2,151,Piece,Piece,Ayurvedic,BATCH0438,2028-08-01,18,0
+439,Ashwagandha Tablets,112.42,214,Strip,Tablet,Ayurvedic,BATCH0439,2027-05-21,18,10
+440,Whisper Sanitary Pads,12.67,191,Piece,Piece,Medicine,BATCH0440,2029-03-24,5,0
+441,Insulin 40IU,6.42,209,Piece,Piece,Medicine,BATCH0441,2027-09-18,5,0
+442,Cetirizine 10mg,24.85,137,Piece,Piece,Medicine,BATCH0442,2027-12-12,12,0
+443,Pantoprazole 40mg,23.47,228,Piece,Piece,Medicine,BATCH0443,2029-09-27,18,0
+444,Omeprazole 20mg,36.76,162,Piece,Piece,Medicine,BATCH0444,2028-04-04,18,0
+445,Himalaya Baby Powder,79.89,152,Sachet,Powder,Baby Care,BATCH0445,2030-01-16,12,0
+446,Sebamed Baby Lotion,242.64,147,Bottle,Lotion,Baby Care,BATCH0446,2030-01-31,12,0
+447,Surgical Gloves,20.94,227,Piece,Piece,Hygiene,BATCH0447,2028-07-30,18,0
+448,Whisper Sanitary Pads,13.65,93,Piece,Piece,Medicine,BATCH0448,2028-08-29,18,0
+449,Pampers Diapers M,83.73,106,Pack,Pack,Baby Care,BATCH0449,2028-09-18,18,0
+450,Pantoprazole 40mg,36.06,155,Piece,Piece,Medicine,BATCH0450,2028-11-15,12,0
+451,Baby Wipes Pack,134.07,233,Pack,Pack,Baby Care,BATCH0451,2028-08-18,12,0
+452,Aspirin 75mg,30.81,169,Piece,Piece,Medicine,BATCH0452,2029-03-23,12,0
+453,Baby Wipes Pack,193.19,235,Pack,Pack,Baby Care,BATCH0453,2027-12-01,12,0
+454,Ibuprofen 400mg,17.94,212,Piece,Piece,Medicine,BATCH0454,2027-07-16,12,0
+455,Lux Soap,46.24,221,Piece,Soap,Personal Care,BATCH0455,2029-10-13,5,0
+456,Losartan 50mg,42.26,99,Piece,Piece,Medicine,BATCH0456,2028-08-14,5,0
+457,B-Complex Tablets,118.51,180,Strip,Tablet,Medicine,BATCH0457,2028-06-09,5,10
+458,Ranitidine 150mg,35.14,165,Piece,Piece,Medicine,BATCH0458,2028-05-12,18,0
+459,Burnol Ointment,47.35,135,Tube,Cream,Medicine,BATCH0459,2028-12-12,18,0
+460,Lifebuoy Handwash,9.52,227,Piece,Piece,Personal Care,BATCH0460,2027-11-13,5,0
+461,Toilet Cleaner,246.24,70,Bottle,Oil,Medicine,BATCH0461,2029-05-18,18,0
+462,Lifebuoy Handwash,26.49,81,Piece,Piece,Personal Care,BATCH0462,2028-09-15,12,0
+463,Johnson Baby Soap,45.84,226,Piece,Soap,Baby Care,BATCH0463,2027-08-07,18,0
+464,Chyawanprash,15.45,219,Piece,Piece,Ayurvedic,BATCH0464,2027-04-22,5,0
+465,Colgate Toothpaste,110.58,75,Tube,Toothpaste,Personal Care,BATCH0465,2027-04-20,12,0
+466,Beardo Beard Oil,111.67,221,Bottle,Oil,Medicine,BATCH0466,2028-09-19,5,0
+467,Azithromycin 500mg,18.43,184,Piece,Piece,Medicine,BATCH0467,2027-09-12,12,0
+468,Johnson Baby Soap,38.17,194,Piece,Soap,Baby Care,BATCH0468,2030-01-13,12,0
+469,Cough Syrup Honey,160.64,149,Bottle,Syrup,Medicine,BATCH0469,2028-08-16,5,0
+470,Montelukast 10mg,19.88,217,Piece,Piece,Medicine,BATCH0470,2029-09-01,18,0
+471,Diclofenac Injection,222.61,33,Vial,Injection,Medicine,BATCH0471,2028-12-26,12,0
+472,Hand Sanitizer 100ml,35.35,79,Piece,Piece,Hygiene,BATCH0472,2028-01-30,18,0
+473,Himalaya Liv.52,45.37,241,Piece,Piece,Medicine,BATCH0473,2029-06-29,18,0
+474,Himalaya Baby Powder,25.2,201,Sachet,Powder,Baby Care,BATCH0474,2027-08-19,5,0
+475,Cough Syrup Honey,112.07,93,Bottle,Syrup,Medicine,BATCH0475,2027-02-18,12,0
+476,Biotique Morning Nectar,15.6,222,Piece,Piece,Medicine,BATCH0476,2028-08-04,12,0
+477,Pampers Diapers M,137.37,176,Pack,Pack,Baby Care,BATCH0477,2027-02-28,12,0
+478,Vaseline Aloe Gel,116.2,45,Tube,Gel,Skin Care,BATCH0478,2027-10-05,12,0
+479,Huggies Dry Pants L,12.19,205,Piece,Piece,Baby Care,BATCH0479,2029-11-30,18,0
+480,Huggies Dry Pants L,36.06,193,Piece,Piece,Baby Care,BATCH0480,2028-10-01,12,0
+481,Giloy Juice,78.71,64,Bottle,Syrup,Ayurvedic,BATCH0481,2029-10-11,5,0
+482,Clinic Plus Shampoo,207.11,185,Bottle,Shampoo,Personal Care,BATCH0482,2029-03-11,12,0
+483,Toilet Cleaner,235.18,223,Bottle,Oil,Medicine,BATCH0483,2030-02-09,18,0
+484,Domperidone 10mg,39.28,204,Piece,Piece,Medicine,BATCH0484,2027-07-22,18,0
+485,Dettol Bathing Soap,41.13,122,Piece,Soap,Personal Care,BATCH0485,2027-07-14,18,0
+486,Montelukast 10mg,7.78,170,Piece,Piece,Medicine,BATCH0486,2029-12-06,5,0
+487,Chyawanprash,29.15,72,Piece,Piece,Ayurvedic,BATCH0487,2028-12-07,18,0
+488,Lux Soap,24.65,82,Piece,Soap,Personal Care,BATCH0488,2029-11-02,5,0
+489,Dettol Liquid,25.05,44,Piece,Piece,Hygiene,BATCH0489,2029-08-21,5,0
+490,Dettol Liquid,23.69,174,Piece,Piece,Hygiene,BATCH0490,2027-06-03,18,0
+491,Head & Shoulders Shampoo,194.37,108,Bottle,Shampoo,Personal Care,BATCH0491,2027-03-21,12,0
+492,Diclofenac Injection,249.52,220,Vial,Injection,Medicine,BATCH0492,2028-04-26,18,0
+493,Vitamin D3 60K,7.04,118,Piece,Piece,Medicine,BATCH0493,2027-06-15,18,0
+494,Omeprazole 20mg,47.06,47,Piece,Piece,Medicine,BATCH0494,2029-09-28,5,0
+495,Johnson Baby Soap,36.35,226,Piece,Soap,Baby Care,BATCH0495,2027-11-09,18,0
+496,Kadha Mix,48.37,125,Piece,Piece,Ayurvedic,BATCH0496,2029-03-29,12,0
+497,Himalaya Neem Face Wash,21.9,204,Piece,Piece,Skin Care,BATCH0497,2027-11-04,18,0
+498,Baby Wipes Pack,67.79,167,Pack,Pack,Baby Care,BATCH0498,2029-04-19,18,0
+499,Atorvastatin 10mg,37.75,87,Piece,Piece,Medicine,BATCH0499,2027-02-12,5,0
+500,Pampers Diapers M,119.45,214,Pack,Pack,Baby Care,BATCH0500,2029-06-22,18,0
+501,test1,500,499.95,Strip,Tablet,Medicine,tesr123,2025-12-27,0,500

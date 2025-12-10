@@ -1,0 +1,18 @@
+==========================================
+         KRISHNA MEDICAL STORE
+==========================================
+Date: 2025-12-11 00:42:42
+Customer: Aakash Singh
+------------------------------------------
+Item                 Qty   Price    Total   
+------------------------------------------
+Cough Syrup          1     85.5     85.5    
+   Batch:BATCH001 Exp:2026-12-11 GST:12%
+Paracetamol 500mg    1     20.0     20.0    
+   Batch:BATCH001 Exp:2026-12-11 GST:12%
+------------------------------------------
+Sub Total (Taxable):  94.20
+Total GST:            11.30
+GRAND TOTAL:          105.50
+==========================================
+   Thank you for your business!
