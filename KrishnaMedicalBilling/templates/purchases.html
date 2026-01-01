@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Purchase Management - Krishna Medical</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input, select { width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; }
+        button { background: #27ae60; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #219150; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background: #f8f9fa; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" style="text-decoration: none; color: #333;">← Back to Dashboard</a>
+        <h1>Purchase Entry (Stock In)</h1>
+        
+        <div class="grid">
+            <!-- Purchase Form -->
+            <div class="card">
+                <h2>New Purchase</h2>
+                <form id="purchaseForm" onsubmit="event.preventDefault(); addPurchase();">
+                    <div class="form-group">
+                        <label>Supplier Name</label>
+                        <input type="text" id="supplier" required placeholder="e.g. Metro Pharma">
+                    </div>
+                    <div class="form-group">
+                        <label>Invoice No.</label>
+                        <input type="text" id="invoiceNo" required>
+                    </div>
+                    
+                    <hr style="border-top: 1px solid #eee; margin: 20px 0;">
+                    
+                    <div class="form-group">
+                        <label>Select Product</label>
+                        <select id="productSelect" onchange="updateProductDetails()">
+                            <option value="">-- Select Product --</option>
+                        </select>
+                    </div>
+                    
+                    <div class="grid" style="grid-template-columns: 1fr 1fr;">
+                        <div class="form-group">
+                            <label>Batch No.</label>
+                            <input type="text" id="batch">
+                        </div>
+                        <div class="form-group">
+                            <label>Expiry Date</label>
+                            <input type="date" id="expiry">
+                        </div>
+                    </div>
+                    
+                    <div class="grid" style="grid-template-columns: 1fr 1fr;">
+                        <div class="form-group">
+                            <label>Quantity (Strips/Units)</label>
+                            <input type="number" id="qty" required min="1">
+                        </div>
+                        <div class="form-group">
+                            <label>Purchase Price (Total)</label>
+                            <input type="number" id="cost" step="0.01" required>
+                        </div>
+                    </div>
+                    
+                    <div id="mrpDisplay" style="margin-bottom: 15px; color: #666;"></div>
+                    
+                    <button type="submit" style="width: 100%;">Add Stock</button>
+                </form>
+            </div>
+            
+            <!-- Recent Purchases -->
+            <div class="card">
+                <h2>Recent Purchases</h2>
+                <table id="recentTable">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Supplier</th>
+                            <th>Product</th>
+                            <th>Qty</th>
+                            <th>Cost</th>
+                        </tr>
+                    </thead>
+                    <tbody id="recentBody">
+                        <tr><td colspan="5">Loading...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let products = [];
+
+        async function loadProducts() {
+            const res = await fetch('/api/products');
+            products = await res.json();
+            const select = document.getElementById('productSelect');
+            select.innerHTML = '<option value="">-- Select Product --</option>';
+            products.forEach(p => {
+                select.innerHTML += `<option value="${p.id}">${p.name}</option>`;
+            });
+        }
+
+        async function loadRecentPurchases() {
+            const res = await fetch('/api/purchases'); // New API endpoint
+            const data = await res.json();
+            const tbody = document.getElementById('recentBody');
+            
+            if(data.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="5">No recent purchases</td></tr>';
+                return;
+            }
+            
+            tbody.innerHTML = data.map(row => `
+                <tr>
+                    <td>${row.date}</td>
+                    <td>${row.supplier}</td>
+                    <td>${row.product_name}</td>
+                    <td>${row.qty}</td>
+                    <td>₹${row.cost}</td>
+                </tr>
+            `).join('');
+        }
+
+        function updateProductDetails() {
+            const pid = document.getElementById('productSelect').value;
+            const p = products.find(prod => prod.id === pid);
+            if (p) {
+                document.getElementById('batch').value = p.batch || '';
+                document.getElementById('expiry').value = p.expiry || '';
+                document.getElementById('mrpDisplay').innerText = `Current Selling Price (MRP): ₹${p.price}`;
+            }
+        }
+
+        async function addPurchase() {
+            const pid = document.getElementById('productSelect').value;
+            if(!pid) return alert("Please select a product");
+
+            const data = {
+                product_id: pid,
+                supplier: document.getElementById('supplier').value,
+                invoice: document.getElementById('invoiceNo').value,
+                batch: document.getElementById('batch').value,
+                expiry: document.getElementById('expiry').value,
+                qty: document.getElementById('qty').value,
+                cost: document.getElementById('cost').value
+            };
+
+            const res = await fetch('/api/purchase', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(data)
+            });
+
+            const result = await res.json();
+            if(result.success) {
+                alert("Stock Added Successfully!");
+                loadRecentPurchases();
+                // Optional: Clear strict fields
+                document.getElementById('qty').value = '';
+                document.getElementById('cost').value = '';
+            } else {
+                alert("Error: " + result.message);
+            }
+        }
+
+        // Init
+        loadProducts();
+        loadRecentPurchases();
+    </script>
+</body>
+</html>

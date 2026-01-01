@@ -667,6 +667,151 @@ def get_reorder_list():
     """
     return html
 
+@app.route('/purchases')
+def purchases_page():
+    return render_template('purchases.html')
+
+@app.route('/expiry')
+def expiry_page():
+    return render_template('expiry.html')
+
+@app.route('/api/purchases')
+def get_purchases():
+    """Get recent purchase log"""
+    purchases = []
+    purchase_file = os.path.join(BASE_DIR, 'purchases.csv')
+    if os.path.exists(purchase_file):
+        try:
+            with open(purchase_file, 'r', encoding='utf-8') as f:
+                reader = csv.DictReader(f)
+                rows = list(reader)
+                purchases = rows[-20:][::-1] # Last 20, reversed
+        except Exception:
+            pass
+    return jsonify(purchases)
+
+@app.route('/api/purchase', methods=['POST'])
+def add_purchase():
+    """Handle stock in"""
+    try:
+        data = request.json
+        pid = str(data.get('product_id'))
+        qty = float(data.get('qty', 0))
+        cost = data.get('cost', '0')
+        supplier = data.get('supplier', '')
+        invoice = data.get('invoice', '')
+        new_batch = data.get('batch', '')
+        new_expiry = data.get('expiry', '')
+        
+        # 1. Update Product Stock (and optionally batch/expiry)
+        products = []
+        prod_name = "Unknown"
+        updated = False
+        
+        if os.path.exists(PRODUCT_FILE):
+            with open(PRODUCT_FILE, 'r', encoding='utf-8') as f:
+                products = list(csv.DictReader(f))
+                
+            for p in products:
+                if p['id'] == pid:
+                    current_stock = float(p.get('stock', 0))
+                    p['stock'] = str(current_stock + qty)
+                    # Update batch/expiry to latest ONLY if provided
+                    if new_batch: p['batch'] = new_batch
+                    if new_expiry: p['expiry'] = new_expiry
+                    prod_name = p['name']
+                    updated = True
+                    break
+        
+        if not updated:
+            return jsonify({'success': False, 'message': 'Product not found'}), 404
+            
+        fieldnames = ['id', 'name', 'price', 'stock', 'unit', 'type', 'category', 'batch', 'expiry', 'gst_rate', 'per_strip']
+        with open(PRODUCT_FILE, 'w', newline='', encoding='utf-8') as f:
+            writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction='ignore')
+            writer.writeheader()
+            writer.writerows(products)
+            
+        # 2. Log Purchase
+        purchase_file = os.path.join(BASE_DIR, 'purchases.csv')
+        file_exists = os.path.exists(purchase_file)
+        
+        with open(purchase_file, 'a', newline='', encoding='utf-8') as f:
+            headers = ['date', 'supplier', 'invoice', 'product_id', 'product_name', 'qty', 'cost', 'batch', 'expiry']
+            writer = csv.DictWriter(f, fieldnames=headers)
+            if not file_exists:
+                writer.writeheader()
+            
+            writer.writerow({
+                'date': datetime.now().strftime('%Y-%m-%d %H:%M'),
+                'supplier': supplier,
+                'invoice': invoice,
+                'product_id': pid,
+                'product_name': prod_name,
+                'qty': qty,
+                'cost': cost,
+                'batch': new_batch,
+                'expiry': new_expiry
+            })
+            
+        return jsonify({'success': True})
+        
+    except Exception as e:
+        return jsonify({'success': False, 'message': str(e)}), 500
+
+@app.route('/api/expiry')
+def get_expiry_report():
+    """Get products filtered by expiry status"""
+    filter_type = request.args.get('filter', 'all')
+    results = []
+    
+    if os.path.exists(PRODUCT_FILE):
+        try:
+            with open(PRODUCT_FILE, 'r', encoding='utf-8') as f:
+                reader = csv.DictReader(f)
+                today = datetime.now().date()
+                
+                for row in reader:
+                    exp_str = row.get('expiry', '').strip()
+                    if not exp_str: continue
+                    
+                    try:
+                        # Handle potential formats: YYYY-MM-DD, DD/MM/YYYY, MM/YY
+                        # Assuming YYYY-MM-DD from HTML input date
+                        exp_date = datetime.strptime(exp_str, '%Y-%m-%d').date()
+                        days_left = (exp_date - today).days
+                        
+                        status = 'OK'
+                        if days_left < 0:
+                            status = 'Expired'
+                        elif days_left < 90:
+                            status = 'Near'
+                            
+                        include = False
+                        if filter_type == 'all': include = True
+                        elif filter_type == 'expired' and status == 'Expired': include = True
+                        elif filter_type == 'near' and status == 'Near': include = True
+                        elif filter_type == '6months' and days_left < 180: include = True
+                        
+                        if include:
+                            results.append({
+                                'name': row['name'],
+                                'batch': row['batch'],
+                                'expiry': exp_str,
+                                'stock': row['stock'],
+                                'days_left': days_left,
+                                'status': status
+                            })
+                            
+                    except ValueError:
+                        pass # Skip invalid dates
+        except Exception:
+            pass
+            
+    # Sort by days left (earliest expiry first)
+    results.sort(key=lambda x: x['days_left'])
+    return jsonify(results)
+
 if __name__ == '__main__':
     app.config['TEMPLATES_AUTO_RELOAD'] = True
     # Auto-open browser could be done here, but standard practice is separate script
