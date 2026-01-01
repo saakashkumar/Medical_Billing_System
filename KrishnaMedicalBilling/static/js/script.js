@@ -369,12 +369,19 @@ async function generateInvoice() {
         if (data.success) {
             // Show Modal
             document.getElementById('modalOverlay').style.display = 'flex';
+
             // Setup Print Link
             const printBtn = document.getElementById('printBtn');
             if (printBtn) {
                 printBtn.onclick = () => {
                     window.open(`/print_invoice/${data.invoice_file}`, '_blank');
                 };
+            }
+
+            // Setup WhatsApp Link
+            const waBtn = document.getElementById('whatsappBtn');
+            if (waBtn) {
+                waBtn.onclick = () => shareOnWhatsApp(data.invoice_file, data.total);
             }
 
             // Clear
@@ -404,4 +411,12 @@ function closeModal() {
 
 function newInvoice() {
     closeModal();
+}
+
+function shareOnWhatsApp(invoiceFile, totalAmount) {
+    const customerName = document.getElementById('customerName').value.trim() || 'Customer';
+    const message = `Hello ${customerName}, here is your bill from Krishna Medical Store.\n\nTotal Amount: ₹${totalAmount}\nInvoice: ${invoiceFile}\n\nThank you for your business!`;
+
+    const url = `https://wa.me/?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
 }
